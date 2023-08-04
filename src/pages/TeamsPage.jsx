@@ -1,6 +1,6 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import axios from "axios";
 
 function TeamsPage() {
   const [constructors, setConstructors] = useState([]);
@@ -96,7 +96,10 @@ function TeamsPage() {
             <ul>
               {team.drivers.map((driver) => (
                 <li key={driver.driverId}>
-                  <strong>{`${driver.givenName} ${driver.familyName}`}</strong> 
+                  {/* Use Link to create a link to the driver details page */}
+                  <Link to={`/driver-details/${driver.driverId}`}>
+                    <strong>{`${driver.givenName} ${driver.familyName}`}</strong>
+                  </Link>{" "}
                 </li>
               ))}
             </ul>

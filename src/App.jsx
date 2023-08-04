@@ -43,7 +43,7 @@ function App() {
 
         <Route path="/current-season" element={<CurrentSeason/>}></Route>
         <Route path="/teams" element={<TeamsPage/>}></Route>
-        <Route path="/driver-details/:driverId" component={<DriverDetailsPage/>} />
+        <Route path="/driver-details/:driverId" element={<DriverDetailsPage/>}></Route>
 
 
       </Routes>

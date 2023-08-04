@@ -2,10 +2,10 @@ import "./App.css";
 import { Routes, Route, Outlet, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
-
 import SignupPage from "./pages/SignUpPage";
 import LoginPage from "./pages/LoginPage";
- 
+import CurrentSeason from "./pages/CurrentSeasonPage";
+
 function App() {
 
   const getToken = () => {
@@ -22,15 +22,14 @@ function App() {
 
   return (
     <div className="App">
-      
+
       <Navbar />
- 
-      <Routes>      
-        <Route path="/" element={ <HomePage /> } />
+
+      {/* ROUTES  */}
+      <Routes>
+        <Route path="/" element={<HomePage />} />
 
         <Route element={<LoggedIn />}>
-
-
         </Route>
 
         <Route element={<NotLoggedIn />}>
@@ -40,8 +39,12 @@ function App() {
 
         </Route>
 
+        <Route path="/current-season" element={<CurrentSeason/>}></Route>
+
+
+
       </Routes>
-      
+
     </div>
   );
 }

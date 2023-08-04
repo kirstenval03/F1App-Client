@@ -1,8 +1,21 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
-const HomePage = () => {
+
+function HomePage() {
   return (
-    <div>HomePage</div>
+    <div>
+      <h1>
+      <Link to="/current-season">Current Season</Link>
+      </h1>
+      <p>
+        Click to see the schedule of 2023 Season!
+      </p>
+
+
+
+
+    </div>
   )
 }
 

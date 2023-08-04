@@ -9,14 +9,13 @@ import { post } from "../services/authService";
 
 
 
-function SignupPage() {
+function SignUpPage() {
 
   const [user, setUser] = useState({
     email: "",
     password: "",
     fullName: "",
-    location: "",
-    username: ""
+    username: "",
   })
 
   const [errorMessage, setErrorMessage] = useState(undefined);
@@ -45,4 +44,54 @@ function SignupPage() {
         setErrorMessage(errorDescription);
       })
   };
- }
+
+  
+  return (
+    <div className="SignupPage">
+      <h1>Sign Up</h1>
+
+      <form onSubmit={handleSignupSubmit}>
+        <label>Email:</label>
+        <input 
+          type="email"
+          name="email"
+          value={user.email}
+          onChange={handleTextChange}
+        />
+
+        <label>Password:</label>
+        <input 
+          type="password"
+          name="password"
+          value={user.password}
+          onChange={handleTextChange}
+        />
+
+        <label>Full Name:</label>
+        <input 
+          type="text"
+          name="fullName"
+          value={user.fullName}
+          onChange={handleTextChange}
+        />
+
+        <label>Username:</label>
+        <input 
+          type="text"
+          name="username"
+          value={user.username}
+          onChange={handleTextChange}
+        />
+
+        <button type="submit">Sign Up</button>
+      </form>
+
+      { errorMessage && <p className="error-message">{errorMessage}</p> }
+
+      <p>Already have account?</p>
+      <Link to="/login"> Login</Link>
+    </div>
+  )
+}
+
+export default SignUpPage;

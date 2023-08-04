@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 function CurrentSeason() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { circuitId } = useParams();
+  const { circuitId  } = useParams();
 
   const fetchData = async () => {
     try {

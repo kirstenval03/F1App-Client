@@ -5,6 +5,8 @@ import HomePage from "./pages/HomePage";
 import SignupPage from "./pages/SignUpPage";
 import LoginPage from "./pages/LoginPage";
 import CurrentSeason from "./pages/CurrentSeasonPage";
+import TeamsPage from "./pages/TeamsPage";
+import DriverDetailsPage from "./pages/DriverDetailsPage";
 
 function App() {
 
@@ -40,7 +42,8 @@ function App() {
         </Route>
 
         <Route path="/current-season" element={<CurrentSeason/>}></Route>
-
+        <Route path="/teams" element={<TeamsPage/>}></Route>
+        <Route path="/driver-details/:driverId" component={<DriverDetailsPage/>} />
 
 
       </Routes>

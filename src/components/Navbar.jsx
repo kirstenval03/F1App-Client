@@ -22,8 +22,8 @@ function Navbar() {
           <span>{user && user.name}</span>
 
           {isLoggedIn && isStaffUser(user) && (
-            <Link to="/merch/add-merch">
-              <button>Add Merch</button>
+            <Link to="/item/add-item">
+              <button>Add Item</button>
             </Link>
           )}
         </>
@@ -40,7 +40,7 @@ function Navbar() {
         </>
       )}
 
-      <Link to="/merch">
+      <Link to="/item">
         <button style={{ marginLeft: "auto" }}>Merch</button>
       </Link>
     </nav>

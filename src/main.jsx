@@ -4,18 +4,18 @@ import App from './App';
 import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './context/auth.context';
-import { MerchProvider } from './context/merch.context';
+import { ItemContext } from "./context/item.context"
 import { CartProvider } from './context/cart.context'; // Import CartProvider
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
       <AuthProvider>
-        <MerchProvider>
+        <ItemProvider>
           <CartProvider>
             <App />
           </CartProvider>
-        </MerchProvider>
+        </ItemProvider>
       </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>

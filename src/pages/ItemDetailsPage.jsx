@@ -1,42 +1,46 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import { MerchContext } from "../context/merch.context";
 import { AuthContext } from "../context/auth.context";
 import { CartContext } from "../context/cart.context";
+import { ItemContext } from "../context/item.context";
 
 import { post } from "../services/authService";
 
-const MerchDetails = () => {
-    const [merch, setMerch] = useState(null);
+// ITEM DETAILS
+const ItemDetails = () => {
+    const [item, setItem] = useState(null);
 
-    const { merchs, getMerchs, setMerchs } = useContext(MerchContext);
+    const { items, getItems, setItems } = useContext(ItemContext);
     const { user } = useContext(AuthContext);
     const { cart, setCart } = useContext(CartContext);
 
-    const { merchId } = useParams();
+    const { itemId } = useParams();
     const navigate = useNavigate();
 
     const isOwner = () => {
-        return user._id === merch.owner._id;
+        return user._id === item.owner._id;
     }
 
-    const deleteMerch = () => {
-        post(`/merch/delete-merch/${merchId}`, merch)
+//DELETE ITEM
+    const deleteItem = () => {
+        post(`/items/delete-item/${itemId}`, item)
             .then((response) => {
-                let newMerchs = merchs.filter(merch => merch._id !== response.data._id);
-                setMerchs(newMerchs);
-                navigate('/all-merch');
+                let newItems = items.filter(item => item._id !== response.data._id);
+                setItems(newItems);
+                navigate('/all-items');
             })
             .catch((err) => {
                 console.log(err);
             });
     }
 
+
+// ADD TO CART
     const addToCart = () => {
         const body = {
-            merchId,
-            merchCost: merch.cost,
-            cartId: cart._id || merch._id  // If cart._id doesn't exist, use merch._id as cartId
+            itemId,
+            itemCost: item.cost,
+            cartId: cart._id || item._id  
         };
 
         post('/cart/update', body)
@@ -51,35 +55,35 @@ const MerchDetails = () => {
     }
 
     useEffect(() => {
-        if (!merchs.length) {
-            getMerchs();
+        if (!items.length) {
+            getItems();
         }
 
-        let thisMerch = merchs.find((merch) => merch._id === merchId);
-        setMerch(thisMerch);
-    }, [merchId, merchs]);
+        let thisItem = item.find((item) => item._id === itemId);
+        setItem(thisItem);
+    }, [itemId, items]);
 
     return (
         <div>
             <h1>Item Details</h1>
 
-            {merch ? (
+            {item ? (
                 <div>
                     {isOwner() ? (
                         <>
-                            <Link to={`/edit-merch/${merch._id}`}>
+                            <Link to={`/edit-item/${item._id}`}>
                                 <button>Edit Item</button>
                             </Link>
-                            <button onClick={deleteMerch}>Remove Listing</button>
+                            <button onClick={deleteItem}>Remove Listing</button>
                         </>
                     ) : (
                         <button onClick={addToCart}>Add to Cart</button>
                     )}
-                    <h3>{merch.name}</h3>
-                    <img id="merch-detail" src={merch.image} alt="merch" />
-                    <p>{merch.size}</p>
-                    <p>{merch.description}</p>
-                    <h5>${merch.cost}</h5>
+                    <h3>{item.name}</h3>
+                    <img id="item-detail" src={item.image} alt="item" />
+                    <p>{item.size}</p>
+                    <p>{item.description}</p>
+                    <h5>${item.cost}</h5>
                 </div>
             ) : (
                 <p>Loading...</p>
@@ -88,4 +92,4 @@ const MerchDetails = () => {
     );
 }
 
-export default MerchDetails;
+export default ItemDetails;

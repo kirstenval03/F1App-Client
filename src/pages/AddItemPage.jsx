@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { post } from "../services/authService";
 import { isStaffUser } from "../utils/authUtils"; // Import the isStaffUser function
 
-const AddMerch = () => {
+const AddItem = () => {
   const { user } = useContext(AuthContext);
-  const [merch, setMerch] = useState({
+  const [item, setItem] = useState({
     owner: user?._id || "", // Ensure user._id is not null or undefined
     name: "",
     image: "",
@@ -25,10 +25,10 @@ const AddMerch = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    post("/merch/new-merch", merch)
+    post("/items/new-item", item)
       .then((response) => {
-        console.log("New Merch", response.data);
-        navigate("/merch");
+        console.log("New Item", response.data);
+        navigate("/items");
       })
       .catch((err) => {
         console.log(err);
@@ -36,34 +36,34 @@ const AddMerch = () => {
   };
 
   const handleTextChange = (e) => {
-    setMerch((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    setItem((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleNumberChange = (e) => {
-    setMerch((prev) => ({ ...prev, [e.target.name]: Number(e.target.value) }));
+    setItem((prev) => ({ ...prev, [e.target.name]: Number(e.target.value) }));
   };
 
   return (
-    <div id="add-sock" >
+    <div id="add-item" >
         <h1>Add a new item to the store</h1>
 
         <form onSubmit={handleSubmit}>
 
             <label>Name</label>
-            <input type="text" name="name" value={merch.name} onChange={handleTextChange} /> 
+            <input type="text" name="name" value={item.name} onChange={handleTextChange} /> 
 
             <label>Image</label>
-            <input type="text" name="image" value={merch.image} onChange={handleTextChange} /> 
+            <input type="text" name="image" value={item.image} onChange={handleTextChange} /> 
 
             <label>Size</label>
-            <input type="text" name="size" value={merch.size} onChange={handleTextChange} /> 
+            <input type="text" name="size" value={item.size} onChange={handleTextChange} /> 
 
             <label>Description</label>
-            <input type="text" name="description" value={merch.description} onChange={handleTextChange} /> 
+            <input type="text" name="description" value={item.description} onChange={handleTextChange} /> 
 
 
             <label>Cost</label>
-            <input type="number" name="cost" value={merch.cost} onChange={handleNumberChange} /> 
+            <input type="number" name="cost" value={item.cost} onChange={handleNumberChange} /> 
 
             <button type="submit">List Item</button>
 
@@ -72,5 +72,5 @@ const AddMerch = () => {
   )
 }
 
-export default AddMerch
+export default AddItem
 

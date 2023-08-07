@@ -1,20 +1,30 @@
-import axios from "axios"
-import { SERVER_URL } from "./SERVER_URL"
+import axios from "axios";
+import { SERVER_URL } from "./SERVER_URL";
 
+const getToken = () => {
+  return localStorage.getItem("authToken");
+};
 
-export const get = (route) => {
-    let token = localStorage.getItem('authToken')
+export const get = (route, isStaff = false) => {
+  const token = getToken();
+  const headers = { Authorization: `Bearer ${token}` };
 
-    return axios.get(SERVER_URL + route, {
-        headers: { Authorization: `Bearer ${token}` }
-    })
-}
+  if (isStaff) {
+  }
 
-export const post = (route, body) => {
-    let token = localStorage.getItem('authToken')
+  return axios.get(SERVER_URL + route, {
+    headers: headers,
+  });
+};
 
-    return axios.post(SERVER_URL + route, body, {
-        headers: { Authorization: `Bearer ${token}` }
-    })
-}
+export const post = (route, body, isStaff = false) => {
+  const token = getToken();
+  const headers = { Authorization: `Bearer ${token}` };
 
+  if (isStaff) {
+  }
+
+  return axios.post(SERVER_URL + route, body, {
+    headers: headers,
+  });
+};

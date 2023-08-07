@@ -7,6 +7,9 @@ import LoginPage from "./pages/LoginPage";
 import CurrentSeason from "./pages/CurrentSeasonPage";
 import TeamsPage from "./pages/TeamsPage";
 import DriverDetailsPage from "./pages/DriverDetailsPage";
+import MerchPage from "./pages/MerchPage";
+import AddMerch from "./pages/AddMerchPage";
+import MerchDetailsPage from "./pages/MerchDetailsPage";
 
 function App() {
 
@@ -44,6 +47,9 @@ function App() {
         <Route path="/current-season" element={<CurrentSeason/>}></Route>
         <Route path="/teams" element={<TeamsPage/>}></Route>
         <Route path="/driver-details/:driverId" element={<DriverDetailsPage/>}></Route>
+        <Route path="/merch" element={<MerchPage/>}></Route>
+        <Route path="/merch/add-merch" element={<AddMerch/>}></Route>
+        <Route path="/merch-details/:merchId" element={<MerchDetailsPage/>}></Route>
 
 
       </Routes>

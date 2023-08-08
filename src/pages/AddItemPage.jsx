@@ -7,7 +7,7 @@ import { isStaffUser } from "../utils/authUtils"; // Import the isStaffUser func
 const AddItem = () => {
   const { user } = useContext(AuthContext);
   const [item, setItem] = useState({
-    owner: user?._id || "", // Ensure user._id is not null or undefined
+    owner: user?._id || "",
     name: "",
     image: "",
     size: "",
@@ -17,7 +17,6 @@ const AddItem = () => {
 
   const navigate = useNavigate();
 
-  // Add a check for staff user
   if (!isStaffUser(user)) {
     return <div>You do not have permission to access this page.</div>;
   }
@@ -25,10 +24,10 @@ const AddItem = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    post("/items/new-item", item)
+    post("/add-item", item)  // Updated endpoint here
       .then((response) => {
         console.log("New Item", response.data);
-        navigate("/items");
+        navigate("/items"); // Redirect to items page after adding
       })
       .catch((err) => {
         console.log(err);
@@ -44,33 +43,29 @@ const AddItem = () => {
   };
 
   return (
-    <div id="add-item" >
-        <h1>Add a new item to the store</h1>
+    <div id="add-item">
+      <h1>Add a new item to the store</h1>
 
-        <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
+        <label>Name</label>
+        <input type="text" name="name" value={item.name} onChange={handleTextChange} />
 
-            <label>Name</label>
-            <input type="text" name="name" value={item.name} onChange={handleTextChange} /> 
+        <label>Image</label>
+        <input type="text" name="image" value={item.image} onChange={handleTextChange} />
 
-            <label>Image</label>
-            <input type="text" name="image" value={item.image} onChange={handleTextChange} /> 
+        <label>Size</label>
+        <input type="text" name="size" value={item.size} onChange={handleTextChange} />
 
-            <label>Size</label>
-            <input type="text" name="size" value={item.size} onChange={handleTextChange} /> 
+        <label>Description</label>
+        <input type="text" name="description" value={item.description} onChange={handleTextChange} />
 
-            <label>Description</label>
-            <input type="text" name="description" value={item.description} onChange={handleTextChange} /> 
+        <label>Cost</label>
+        <input type="number" name="cost" value={item.cost} onChange={handleNumberChange} />
 
-
-            <label>Cost</label>
-            <input type="number" name="cost" value={item.cost} onChange={handleNumberChange} /> 
-
-            <button type="submit">List Item</button>
-
-        </form>
+        <button type="submit">List Item</button>
+      </form>
     </div>
-  )
-}
+  );
+};
 
-export default AddItem
-
+export default AddItem;

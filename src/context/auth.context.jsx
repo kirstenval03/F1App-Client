@@ -12,7 +12,7 @@ function AuthProvider({ children }) {
 
   const navigate = useNavigate()
 
-  const storeToken = (token) => {       //  <==  ADD
+  const storeToken = (token) => {      
     localStorage.setItem('authToken', token);
   }
 

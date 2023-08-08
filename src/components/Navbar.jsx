@@ -40,7 +40,7 @@ function Navbar() {
         </>
       )}
 
-      <Link to="/item">
+      <Link to="/items">
         <button style={{ marginLeft: "auto" }}>Merch</button>
       </Link>
     </nav>

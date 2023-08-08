@@ -7,9 +7,10 @@ const ItemPreview = ({ item }) => {
 
         <Link to={`/item-details/${item._id}`}>
           <div>
-            <img id="preview" src={item.image} alt="item" />
-            <p>{item.size}</p>
-            <p>{item.cost}</p>
+            <h3>{item.name}</h3>
+            <img id="itemImg" src={item.image} alt="item" />
+            <p>Size: {item.size}</p>
+            <p>Cost: {item.cost}</p>
           </div>
         </Link>
 

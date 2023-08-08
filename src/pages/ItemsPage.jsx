@@ -2,6 +2,8 @@ import { useContext, useEffect } from "react"
 import { ItemContext } from "../context/item.context" 
 import { Link } from "react-router-dom"
 
+import ItemPreview from "../components/ItemPreview"
+
 const ItemsPage = () => {
 
     const { items, getItems } = useContext(ItemContext)

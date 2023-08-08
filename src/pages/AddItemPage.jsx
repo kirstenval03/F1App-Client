@@ -14,7 +14,7 @@ const AddItem = () => {
     image: "",
     size: "",
     description: "",
-    cost: 0,
+    cost: "",
   });
 
   const navigate = useNavigate();

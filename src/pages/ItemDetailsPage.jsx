@@ -14,7 +14,7 @@ const ItemDetails = () => {
     const navigate = useNavigate();
 
     const isOwner = () => {
-        return user._id === item.owner;
+        return user === item.owner;
     };
 
     const deleteItem = () => {
@@ -97,9 +97,9 @@ const ItemDetails = () => {
 
                     <h3>{item.name}</h3>
                     <img id="itemImg" src={item.image} alt="item" />
-                    <p>{item.size}</p>
-                    <p>{item.description}</p>
-                    <h5>${item.cost}</h5>
+                    <p>Size: {item.size}</p>
+                    <p>Description: {item.description}</p>
+                    <h5>Cost: ${item.cost} USD</h5>
                 </div>
             ) : (
                 <p>Loading...</p>

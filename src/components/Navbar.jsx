@@ -22,7 +22,7 @@ function Navbar() {
           <span>{user && user.name}</span>
 
           {isLoggedIn && isStaffUser(user) && (
-            <Link to="/item/add-item">
+            <Link to="/item/new-item">
               <button>Add Item</button>
             </Link>
           )}

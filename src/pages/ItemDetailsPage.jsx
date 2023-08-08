@@ -14,7 +14,7 @@ const ItemDetails = () => {
     const navigate = useNavigate();
 
     const isOwner = () => {
-        return user && item && user._id === item.owner._id;
+        return user._id === item.owner;
     };
 
     const deleteItem = () => {
@@ -34,7 +34,7 @@ const ItemDetails = () => {
             const body = {
                 itemId,
                 itemCost: item.cost,
-                cartId: cart ? cart._id : null
+                cartId: cart ? cart._id : null,
             };
 
             if (!cart) {
@@ -64,12 +64,16 @@ const ItemDetails = () => {
     };
 
     useEffect(() => {
-        if (!items.length) {
-            getItems();
-        }
+        const fetchData = async () => {
+            if (!items.length) {
+                await getItems();
+            }
 
-        let thisItem = items.find((item) => item._id === itemId);
-        setItem(thisItem);
+            let thisItem = items.find((item) => item._id === itemId);
+            setItem(thisItem);
+        };
+
+        fetchData();
     }, [itemId, items]);
 
     return (
@@ -83,16 +87,12 @@ const ItemDetails = () => {
                             <Link to={`/edit-item/${item._id}`}>
                                 <button>Edit Item</button>
                             </Link>
-                            <button onClick={deleteItem}>Delete Item</button>
+                            <button onClick={deleteItem}>Remove Listing</button>
                         </>
                     ) : (
-                        <>
-                            {user ? (
-                                <button onClick={addToCart}>Add to Cart</button>
-                            ) : (
-                                <p>Please <Link to="/login">log in</Link> to add this item to your cart.</p>
-                            )}
-                        </>
+                        <button onClick={addToCart}>
+                            {user ? "Add to Cart" : "Log in to Add to Cart"}
+                        </button>
                     )}
 
                     <h3>{item.name}</h3>

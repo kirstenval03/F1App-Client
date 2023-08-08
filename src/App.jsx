@@ -10,6 +10,7 @@ import DriverDetailsPage from "./pages/DriverDetailsPage";
 import ItemsPage from "./pages/ItemsPage";
 import AddItem from "./pages/AddItemPage";
 import ItemDetails from "./pages/ItemDetailsPage";
+import EditItem from "./pages/EdiItem";
 import Cart from "./pages/Cart";
 
 
@@ -45,7 +46,9 @@ function App() {
 
 
         <Route element={<LoggedIn />}>
-        <Route path="/item/add-item" element={<AddItem />} /> 
+
+        <Route path="/item/new-item" element={<AddItem />} /> 
+        <Route path="/edit-item/:itemId" element={<EditItem/>}></Route>
         <Route path="/cart" element={<Cart />} />
 
         </Route>
@@ -57,9 +60,6 @@ function App() {
 
         </Route>
 
-        
-        
-        
 
       </Routes>
 

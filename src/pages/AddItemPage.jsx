@@ -1,7 +1,9 @@
 import { useState, useContext } from "react";
 import { AuthContext } from "../context/auth.context";
+
 import { useNavigate } from "react-router-dom";
 import { post } from "../services/authService";
+
 import { isStaffUser } from "../utils/authUtils"; // Import the isStaffUser function
 
 const AddItem = () => {
@@ -23,14 +25,15 @@ const AddItem = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    post("/add-item", item)  // Updated endpoint here
+    console.log("Submitting item:", item);
+  
+    post("/items/new-item", item)  // This should be a POST request
       .then((response) => {
         console.log("New Item", response.data);
         navigate("/items"); // Redirect to items page after adding
       })
       .catch((err) => {
-        console.log(err);
+        console.log("Error adding item:", err);
       });
   };
 
@@ -43,7 +46,7 @@ const AddItem = () => {
   };
 
   return (
-    <div id="add-item">
+    <div id="new-item">
       <h1>Add a new item to the store</h1>
 
       <form onSubmit={handleSubmit}>

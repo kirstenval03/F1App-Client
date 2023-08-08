@@ -30,46 +30,46 @@ const ItemDetails = () => {
     };
 
     const addToCart = () => {
-        const body = {
-            itemId,
-            itemCost: item.cost,
-            cartId: cart ? cart._id : null,
-        };
+        if (user) {
+            const body = {
+                itemId,
+                itemCost: item.cost,
+                cartId: cart ? cart._id : null
+            };
 
-        if (!cart) {
-            post('/cart/create', body)
-                .then((response) => {
-                    console.log("New cart", response.data);
-                    setCart(response.data);
-                    navigate('/cart');
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
+            if (!cart) {
+                post('/cart/create', body)
+                    .then((response) => {
+                        console.log("New cart", response.data);
+                        setCart(response.data);
+                        navigate('/cart');
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    });
+            } else {
+                post('/cart/update', body)
+                    .then((response) => {
+                        console.log("Updated cart", response.data);
+                        setCart(response.data);
+                        navigate('/cart');
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    });
+            }
         } else {
-            post('/cart/update', body)
-                .then((response) => {
-                    console.log("Updated cart", response.data);
-                    setCart(response.data);
-                    navigate('/cart');
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
+            navigate('/login');
         }
     };
 
     useEffect(() => {
-        const fetchData = async () => {
-            if (!items.length) {
-                await getItems();
-            }
+        if (!items.length) {
+            getItems();
+        }
 
-            let thisItem = items.find((item) => item._id === itemId);
-            setItem(thisItem);
-        };
-
-        fetchData();
+        let thisItem = items.find((item) => item._id === itemId);
+        setItem(thisItem);
     }, [itemId, items]);
 
     return (
@@ -83,10 +83,16 @@ const ItemDetails = () => {
                             <Link to={`/edit-item/${item._id}`}>
                                 <button>Edit Item</button>
                             </Link>
-                            <button onClick={deleteItem}>Remove Listing</button>
+                            <button onClick={deleteItem}>Delete Item</button>
                         </>
                     ) : (
-                        <button onClick={addToCart}>Add to Cart</button>
+                        <>
+                            {user ? (
+                                <button onClick={addToCart}>Add to Cart</button>
+                            ) : (
+                                <p>Please <Link to="/login">log in</Link> to add this item to your cart.</p>
+                            )}
+                        </>
                     )}
 
                     <h3>{item.name}</h3>

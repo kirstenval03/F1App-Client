@@ -26,6 +26,11 @@ function Navbar() {
               <button>Add Item</button>
             </Link>
           )}
+
+          {/* Add the "Your Cart" button */}
+          <Link to="/cart">
+            <button>Your Cart</button>
+          </Link>
         </>
       )}
 
@@ -37,6 +42,19 @@ function Navbar() {
           <Link to="/login">
             <button>Login</button>
           </Link>
+        </>
+      )}
+
+      {getToken() && (
+        <>
+          <button onClick={logOutUser}>Logout</button>
+          <span>{user && user.name}</span>
+
+          {isLoggedIn && isStaffUser(user) && (
+            <Link to="/item/new-item">
+              <button>Add Item</button>
+            </Link>
+          )}
         </>
       )}
 

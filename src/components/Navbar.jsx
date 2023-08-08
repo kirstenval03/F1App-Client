@@ -27,7 +27,7 @@ function Navbar() {
             </Link>
           )}
 
-          {/* Add the "Your Cart" button */}
+          
           <Link to="/cart">
             <button>Your Cart</button>
           </Link>

@@ -6,8 +6,9 @@ import { Link, useNavigate } from "react-router-dom";
 const Cart = () => {
   const { cart, setCart } = useContext(CartContext);
   const navigate = useNavigate();
+
   if (!cart) {
-    // If cart is not available yet,  show a loading  message
+    // If cart is not available yet, show a loading message
     return <div>Loading...</div>;
   }
   const cartId = cart._id;
@@ -69,23 +70,39 @@ const Cart = () => {
       });
   };
 
+  const increaseItem = (_id) => {
+    post(`/cart/increase-item/${_id}`, cartId)
+    .then((response) => {
+      console.log("Updated cart:", response.data);
+      if (!response.data.items.length) {
+        setCart(null);
+      }
+      setCart(response.data);
+      navigate("/cart");
+    })
+    .catch((error) => {
+      console.log("Error", error);
+    });
+};
+  
   return (
+<div>
+  {cart.items && cart.items.length ? (
     <div>
-      {cart.items && cart.items.length ? (
-        <div>
-          {Object.values(groupedItems).map((groupedItem) => {
-            const { _id, name, cost, image, quantity } = groupedItem;
-            return (
-              <div key={_id}>
-                <Link to={`/item-details/${_id}`}>
-                  <h3>{name}</h3>
-                </Link>
-                <img id="itemImg" src={image} alt="item" />
-                <h3>$ {cost} usd</h3>
-                <p>Quantity: {quantity}</p>
-                <button onClick={() => decreaseItem(_id)}>-1 item</button>
-                <button onClick={() => deleteFromCart(_id)}>Remove item</button>
-              </div>
+      {Object.values(groupedItems).map((groupedItem) => {
+        const { _id, name, cost, image, quantity } = groupedItem;
+        return (
+          <div key={_id}>
+            <Link to={`/item-details/${_id}`}>
+              <h3>{name}</h3>
+            </Link>
+            <img id="itemImg" src={image} alt="item" />
+            <h3>$ {cost} usd</h3>
+            <p>Quantity: {quantity}</p>
+            <button onClick={() => decreaseItem(_id)}>-1 item</button>
+            <button onClick={() => increaseItem(_id)}>+1 item</button>
+            <button onClick={() => deleteFromCart(_id)}>Remove item</button>
+          </div>
             );
           })}
 

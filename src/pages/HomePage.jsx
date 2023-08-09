@@ -19,6 +19,13 @@ function HomePage() {
         Click to see the information about 2023 teams!
       </p>
 
+      <h1>
+      <Link to="/items">Merch Store</Link>
+      </h1>
+      <p>
+        Click here to purchase your favorite items!
+      </p>
+
     </div>
   )
 }

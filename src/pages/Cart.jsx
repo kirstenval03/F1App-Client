@@ -6,6 +6,10 @@ import { Link, useNavigate } from "react-router-dom";
 const Cart = () => {
   const { cart, setCart } = useContext(CartContext);
   const navigate = useNavigate();
+  if (!cart) {
+    // If cart is not available yet,  show a loading  message
+    return <div>Loading...</div>;
+  }
   const cartId = cart._id;
 
   const groupedItems = cart.items

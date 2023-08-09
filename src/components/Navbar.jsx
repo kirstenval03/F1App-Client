@@ -16,25 +16,26 @@ function Navbar() {
         <button>Home</button>
       </Link>
 
-      {getToken() && (
+      {getToken() ? (
         <>
-          <button onClick={logOutUser}>Logout</button>
-          <span>{user && user.name}</span>
+          {isLoggedIn && (
+            <>
+              <button onClick={logOutUser}>Logout</button>
+              <span>{user && user.name}</span>
 
-          {isLoggedIn && isStaffUser(user) && (
-            <Link to="/item/new-item">
-              <button>Add Item</button>
-            </Link>
+              {isStaffUser(user) && (
+                <Link to="/item/new-item">
+                  <button>Add Item</button>
+                </Link>
+              )}
+            </>
           )}
 
-          
           <Link to="/cart">
             <button>Your Cart</button>
           </Link>
         </>
-      )}
-
-      {!getToken() && (
+      ) : (
         <>
           <Link to="/signup">
             <button>Sign Up</button>
@@ -42,19 +43,6 @@ function Navbar() {
           <Link to="/login">
             <button>Login</button>
           </Link>
-        </>
-      )}
-
-      {getToken() && (
-        <>
-          <button onClick={logOutUser}>Logout</button>
-          <span>{user && user.name}</span>
-
-          {isLoggedIn && isStaffUser(user) && (
-            <Link to="/item/new-item">
-              <button>Add Item</button>
-            </Link>
-          )}
         </>
       )}
 

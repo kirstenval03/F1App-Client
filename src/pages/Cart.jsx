@@ -1,57 +1,119 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
-import { CartContext } from "../context/cart.context";
 import { post } from "../services/authService";
-import ItemPreview from "../components/ItemPreview";
+import { CartContext } from "../context/cart.context";
+import { Link, useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const { cart, setCart } = useContext(CartContext);
+  console.log("in Cart", cart);
+  const navigate = useNavigate();
+  const cartId = cart._id;
 
-  const removeItem = (id) => {
-    console.log("Removing", id);
+if(cart){
+  if(!cart.message){
+    const groupedItems = cart.items.reduce((groupedItems, item) => {
+      if (!groupedItems[item._id]) {
+        groupedItems[item._id] = {
+          ...item,
+          quantity: 1,
+        };
+      } else {
+        groupedItems[item._id].quantity++;
+      }
+      console.log("groupedItems", groupedItems)
+      return groupedItems;
+    }, {}); 
+  
 
-    post(`/cart/remove-item/${id}`, cart)
-      .then((response) => {
-        console.log("Removed", response.data);
-        setCart(response.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+    const proceedToPayment = () => {
+      post(`/stripe/create-checkout-session/${cart._id}`, groupedItems)
+          .then((response) => {
+              console.log("STRIPE URL:", response.data);
+              const url = response.data.url;
+              setCart(null)
+              window.location.href = url;
+              
+          })
+          .catch((error) => {
+            console.log("Error", error)
+          })
+
+    }
+
+    const deleteFromCart = (_id) => {
+      console.log("Id:", _id)
+      post(`/cart/remove-item/${_id}`, cartId)
+          .then((response) => {
+              console.log("Updated cart:", response.data);
+              if(!response.data.items.length){
+                setCart(null)
+              }
+              setCart(response.data)
+              navigate("/cart");
+          })
+          .catch((error) => {
+              console.log("Error", error);
+          });
+  }
+
+
+  const decreaseItem = (_id) => {
+    post(`/cart/decrease-item/${_id}`, cartId)
+          .then((response) => {
+              console.log("Updated cart:", response.data);
+              if(!response.data.items.length){
+                setCart(null)
+              }
+              setCart(response.data)
+              navigate("/cart");
+          })
+          .catch((error) => {
+              console.log("Error", error);
+          });
+  }
 
   return (
     <div>
-      <h1>Your Cart</h1>
+        {cart.message && <h2>{cart.message}</h2>}
 
-      {cart ? (
-        <div>
-          {cart.items.length === 0 ? (
+        {cart.items.length ? (
             <div>
-              <h3>Your cart is empty</h3>
-              <p>
-                See all the merchandise and <Link to="/items">add something</Link>.
-              </p>
+                {Object.values(groupedItems).map((groupedItem) => {
+                    const { _id, name, cost, image,  quantity } = groupedItem;
+                    return (
+                        <div key={_id}>
+                            <Link to={`/item-details/${_id}`}>
+                                <h3>{name}</h3>
+                            </Link>
+                            <img id="itemImg" src={image} alt="item" />
+                            <h3>$ {cost} usd</h3>
+                            <p>Quantity: {quantity}</p>
+                            <button onClick={() => decreaseItem(_id)}>-1 item</button>
+                            <button onClick={() => deleteFromCart(_id)}>Remove item</button>
+                        </div>
+                    );
+                })}
+
+                <p>Your purchase summary:</p>
+                <p>Subtotal: $ {cart.subtotal} </p>
+                <p>Shipping: $10</p>
+                <p>Total: $ {cart.total} </p>
+                <button onClick={proceedToPayment}>Proceed to checkout</button>
             </div>
-          ) : (
-            <div>
-              {cart.items.map((item) => (
-                <div key={item._id}>
-                  <ItemPreview item={item} />
-                  <button onClick={() => removeItem(item._id)}>Remove</button>
-                </div>
-              ))}
-              <h5>Subtotal: ${cart.subtotal}</h5>
-              <h5>Shipping: $ 10</h5>
-              <h4>Total: ${cart.total.toFixed(2)}</h4>
-            </div>
-          )}
-        </div>
-      ) : (
-        <p>Loading...</p>
-      )}
+        ) : (
+            <h3>Your cart is empty</h3>
+        )}
     </div>
-  );
+);
+  }
+  else{
+    return(
+      <div>{cart.message}</div>
+    )
+  }
+
+
 };
 
+}
 export default Cart;

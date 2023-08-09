@@ -1,5 +1,4 @@
 import { useState, useEffect, createContext, useContext } from "react";
-import { useNavigate } from "react-router-dom";
 
 import { AuthContext } from "./auth.context";
 
@@ -13,7 +12,7 @@ const CartProvider = ({ children }) => {
 
     const { user } = useContext(AuthContext)
 
-    useEffect(() => {
+    const getCart = () => {
 
         get('/cart')
             .then((response) => {
@@ -23,12 +22,21 @@ const CartProvider = ({ children }) => {
             .catch((err) => {
                 console.log(err)
             })
+    }
 
-    }, [user])
+    useEffect(() => {
+
+        if (!cart) {
+
+            getCart()
+        }
+
+
+    }, [user , cart])
 
 
     return (
-        <CartContext.Provider value={{ cart, setCart }} >
+        <CartContext.Provider value={{ cart, setCart, getCart }} >
             {children}
         </CartContext.Provider>
     )

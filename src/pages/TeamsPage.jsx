@@ -11,7 +11,7 @@ function TeamsPage() {
   const fetchConstructorsData = async () => {
     try {
       const response = await axios.get(
-        "http://ergast.com/api/f1/2023/constructors.json"
+        "https://ergast.com/api/f1/2023/constructors.json"
       );
       console.log("Constructors API Response:", response.data);
       setConstructors(response.data.MRData.ConstructorTable.Constructors);
@@ -23,7 +23,7 @@ function TeamsPage() {
   const fetchDriversData = async () => {
     try {
       const response = await axios.get(
-        "http://ergast.com/api/f1/2023/drivers.json"
+        "https://ergast.com/api/f1/2023/drivers.json"
       );
       console.log("Drivers API Response:", response.data);
       setDrivers(response.data.MRData.DriverTable.Drivers);

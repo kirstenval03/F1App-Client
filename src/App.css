@@ -7,19 +7,19 @@ Img {
 
 .SignupPage {
     display: flex;
-    width: 1190px;
-    height: 250px;
-    padding: 272px 180.55px 272px 180.05px;
+    width: 163vh;
+    height: 30.2vh;
+    padding:  37.2vh 24.7vh  37.2vh 24.7vh;
     justify-content: center;
     align-items: center;
     background: #002E48;
 }
 
 .SPcontainer1 {
-    width: 550px;
-    height: 480px;
+    width: 75.3vh;
+    height: 65.7vh;
     flex-shrink: 0;
-    border-radius: 19.2px 0px 0px 19.2px;
+    border-radius:  2.63vh 0vh 0vh  2.63vh;
     background: #CEDDE6;
 
 }
@@ -92,5 +92,5 @@ Img {
     width: 600px;
 }
 #SPgif{
-    height: 480px ;
+    height: 65.7vh ;
 }

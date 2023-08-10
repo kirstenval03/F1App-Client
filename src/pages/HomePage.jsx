@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 function HomePage() {
   return (
     <div>
+
+
       <h1>
       <Link to="/current-season">Current Season</Link>
       </h1>

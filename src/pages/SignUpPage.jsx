@@ -62,7 +62,8 @@ function SignUpPage() {
             </svg>
             <label id="SPlabel">Full Name:</label>
 
-            <input id="SPform"
+            <input 
+              id="SPform"
               type="text"
               name="fullName"
               value={user.fullName}
@@ -85,7 +86,8 @@ function SignUpPage() {
               </defs>
             </svg>
             <label id="SPlabel">Email:</label>
-            <input id="SPform"
+            <input 
+              id="SPform"
               type="email"
               name="email"
               value={user.email}
@@ -102,7 +104,8 @@ function SignUpPage() {
             <label id="SPlabel">Username:</label>
 
             <div>
-              <input id="SPform"
+              <input 
+                id="SPform"
                 type="text"
                 name="username"
                 value={user.username}
@@ -125,7 +128,8 @@ function SignUpPage() {
               </defs>
             </svg>
             <label id="SPlabel">Password:</label>
-            <input id="SPform"
+            <input 
+              id="SPform"
               type="password"
               name="password"
               value={user.password}
@@ -144,11 +148,11 @@ function SignUpPage() {
           <p>Already have account?</p>
           <Link to="/login"> Login</Link>
         </div>
-        
+
 
       </div>
       <img id="SPgif" src="https://res.cloudinary.com/dhqplbne3/image/upload/v1691677029/Formula1-App/F1_SignUp.gif"></img>
-      
+
     </div>
   )
 }

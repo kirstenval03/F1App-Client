@@ -102,12 +102,12 @@ function SignUpPage() {
             <label id="SPlabel">Username:</label>
 
             <div>
-            <input id="SPform"
-              type="text"
-              name="username"
-              value={user.username}
-              onChange={handleTextChange}
-            />
+              <input id="SPform"
+                type="text"
+                name="username"
+                value={user.username}
+                onChange={handleTextChange}
+              />
             </div>
           </div>
           <br />
@@ -134,18 +134,21 @@ function SignUpPage() {
           </div>
           <br />
           <div id="SPbuttoncontainer">
-          <button type="submit" id="SPbutton">Sign Up</button>
+            <button type="submit" id="SPbutton">Sign Up</button>
           </div>
         </form>
 
         {errorMessage && <p className="error-message">{errorMessage}</p>}
 
         <div id="SPmessage">
-        <p>Already have account?</p>
-        <Link to="/login"> Login</Link>
+          <p>Already have account?</p>
+          <Link to="/login"> Login</Link>
         </div>
-      </div>
+        
 
+      </div>
+      <img id="SPgif" src="https://res.cloudinary.com/dhqplbne3/image/upload/v1691677029/Formula1-App/F1_SignUp.gif"></img>
+      
     </div>
   )
 }

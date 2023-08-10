@@ -1,4 +1,93 @@
-#itemImg{
+Img {
     height: 200px;
     width: max-content;
+}
+
+/* SignupPage */
+
+.SignupPage {
+    display: flex;
+    width: 1190px;
+    height: 200px;
+    padding: 272px 180.55px 272px 180.05px;
+    justify-content: center;
+    align-items: center;
+    background: #002E48;
+}
+
+.SPcontainer1 {
+    width: 600px;
+    height: 480px;
+    flex-shrink: 0;
+    border-radius: 19.2px 0px 0px 19.2px;
+    background: #CEDDE6;
+
+}
+
+#SPh1 {
+    color: #00507C;
+    text-align: center;
+    font-family: Titillium Web;
+    font-size: 31.2px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal
+}
+
+#SPform {
+    width: 360px;
+    height: 35.2px;
+    flex-shrink: 0;
+    border-radius: 28.8px;
+    background: #FFF;
+}
+
+#SPlabel {
+    padding-right: 10px;
+    display: flex;
+    align-items: baseline;
+    width: 100px;
+    justify-content: center;
+
+}
+
+#SPbutton {
+    width: 150px;
+    height: 38.4px;
+    flex-shrink: 0;
+    border-radius: 28.8px;
+    background: #00507C;
+    color: #FFF;
+    text-align: center;
+    font-family: Rubik;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+
+#SPcontainer2 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: baseline;
+}
+
+#SPlabel1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+#SPmessage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#SPbuttoncontainer {
+    width: 600px;
 }

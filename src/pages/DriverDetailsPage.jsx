@@ -11,6 +11,7 @@ function DriverDetailsPage() {
       try {
         const response = await axios.get(
           `https://ergast.com/api/f1/drivers/${driverId}.json`
+          
         );
         console.log("Driver API Response:", response.data);
         const driver = response.data.MRData.DriverTable.Drivers[0];
@@ -18,7 +19,7 @@ function DriverDetailsPage() {
       } catch (error) {
         console.error("Error fetching driver data:", error);
       }
-    };g 
+    };
 
     fetchDriverData();
   }, [driverId]);

@@ -10,7 +10,7 @@ function DriverDetailsPage() {
     const fetchDriverData = async () => {
       try {
         const response = await axios.get(
-          `http://ergast.com/api/f1/drivers/${driverId}.json`
+          `https://ergast.com/api/f1/drivers/${driverId}.json`
         );
         console.log("Driver API Response:", response.data);
         const driver = response.data.MRData.DriverTable.Drivers[0];

@@ -50,7 +50,10 @@ function SignUpPage() {
     <div className="SignupPage">
 
       <div className="SPcontainer1">
-        <h1 id="SPh1">Hello speed lover!</h1>
+        <h1 id="SPh1">Start Your Engines with Us!
+        <br />
+        Sing Up
+        </h1>
 
         <form onSubmit={handleSignupSubmit} id="SPcontainer2">
 

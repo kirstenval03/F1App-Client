@@ -11,7 +11,7 @@ function DriverDetailsPage() {
       try {
         const response = await axios.get(
           `https://ergast.com/api/f1/drivers/${driverId}.json`
-          
+
         );
         console.log("Driver API Response:", response.data);
         const driver = response.data.MRData.DriverTable.Drivers[0];
@@ -51,29 +51,51 @@ function DriverDetailsPage() {
   const driverImageUrl = driverImageMap[driverId] || "default_image_url";
 
   return (
-    <div>
-      <h1>Driver Details</h1>
+<div className="DriverDetailsPage">
+  
+    <img
+      id="DDh1Image"
+      src="https://res.cloudinary.com/dhqplbne3/image/upload/v1691721007/Formula1-App/Driver_4_vdcatu.png"
+      alt="Driver Banner"
+    />
 
-      <img src={driverImageUrl} alt="Driver" id="" />
-      <p>
-        <strong>Name:</strong> {`${driverInfo.givenName} ${driverInfo.familyName}`}
-      </p>
-      <p>
-        <strong>Date of Birth:</strong> {driverInfo.dateOfBirth}
-      </p>
-      <p>
-        <strong>Nationality:</strong> {driverInfo.nationality}
-      </p>
-      <p>
-        <strong>Permanent Number:</strong> {driverInfo.permanentNumber}
-      </p>
-      <p>
-        <strong>Wikipedia URL:</strong>{" "}
-        <a href={driverInfo.url} target="_blank" rel="noopener noreferrer">
-          {driverInfo.url}
-        </a>
-      </p>
+
+  <div id="DDcontainer">
+    <div id="DDcontainer1">
+      <img src={driverImageUrl} alt="Driver" id="DDImg" />
+      <div id="DDinfo">
+        <p className="DDp">
+          <strong>Name:</strong> <br />
+          {`${driverInfo.givenName} ${driverInfo.familyName}`}
+        </p>
+        <p className="DDp">
+          <strong>Date of Birth:</strong> <br />
+          {driverInfo.dateOfBirth}
+        </p>
+        <p className="DDp">
+          <strong>Nationality:</strong> <br />
+          {driverInfo.nationality}
+        </p>
+        <p className="DDp">
+          <strong>Permanent Number:</strong> <br />
+          {driverInfo.permanentNumber}
+        </p>
+        <p className="DDp">
+          <strong>Wikipedia URL:</strong> <br />
+          <a
+            href={driverInfo.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {driverInfo.url}
+          </a>
+        </p>
+      </div>
     </div>
+  </div>
+</div>
+
+
   );
 }
 

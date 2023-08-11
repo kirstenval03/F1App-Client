@@ -30,29 +30,29 @@ function CurrentSeason() {
   }
 
   return (
-    <div>
-      <h1>Schedule - 2023 Season </h1>
-      <ul>
-        {data.map((race) => (
-          <li key={race.round}>
-            <h2>{race.raceName}</h2>
-            <p>
-              Date: {race.date} - Time: {race.time}
-            </p>
-            <p>
-              Circuit: {race.Circuit.circuitName}, {race.Circuit.Location.locality},{" "}
-              {race.Circuit.Location.country}
-            </p>
-            <p>
-              Wikipedia:{" "}
-              <a href={race.url} target="_blank" rel="noopener noreferrer">
-                {race.raceName} 
-              </a>
-            </p>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <div id="CurrentSeasonPage"> {/* Add a unique ID */}
+    <img id="TPh1" src="https://res.cloudinary.com/dhqplbne3/image/upload/v1691727055/Formula1-App/CStitle.png"></img>
+    <ul>
+      {data.map((race) => (
+        <li key={race.round}>
+          <h2>{race.raceName}</h2>
+          <p>
+            Date: {race.date} - Time: {race.time}
+          </p>
+          <p>
+            Circuit: {race.Circuit.circuitName}, {race.Circuit.Location.locality},{" "}
+            {race.Circuit.Location.country}
+          </p>
+          <p>
+            Wikipedia:{" "}
+            <a href={race.url} target="_blank" rel="noopener noreferrer">
+              {race.raceName}
+            </a>
+          </p>
+        </li>
+      ))}
+    </ul>
+  </div>
   );
 }
 

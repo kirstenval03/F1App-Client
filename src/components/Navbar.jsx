@@ -14,7 +14,7 @@ function Navbar() {
 
     <nav style={{ display: "flex", alignItems: "center" }}>
       <img id="NBlogo" src="https://res.cloudinary.com/dhqplbne3/image/upload/v1691693497/Formula1-App/F1LogoHP.gif"></img>
-      
+      <div id="NBbuttons">
       
       <Link to="/">
         <button>Home</button>
@@ -45,7 +45,7 @@ function Navbar() {
             <button>Sign Up</button>
           </Link>
           <Link to="/login">
-            <button>Login</button>
+            <button>Log In</button>
           </Link>
         </>
       )}
@@ -53,6 +53,8 @@ function Navbar() {
       <Link to="/items">
         <button style={{ marginLeft: "auto" }}>Merch</button>
       </Link>
+      </div>
+
     </nav>
   );
 }

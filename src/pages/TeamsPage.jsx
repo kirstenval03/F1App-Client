@@ -85,20 +85,23 @@ function TeamsPage() {
   const teamsWithDrivers = mapDriversToTeams();
 
   return (
-    <div>
-      <h1>2023 Teams</h1>
-      <ul>
+    <div className="TeamsPage">
+      <h1 id="TPh1">
+      <img id="TPh1" src="https://res.cloudinary.com/dhqplbne3/image/upload/v1691709460/Formula1-App/TPtitle.png"></img>
+        </h1>
+      <div id="TPteams">
+      <ul id="TPteams">
         {teamsWithDrivers.map((team) => (
-          <li key={team.constructorId}>
+          <li key={team.constructorId} id="TPlist">
             <h2>{team.name}</h2>
             <p>Nationality: {team.nationality}</p>
             <p>Drivers:</p>
-            <ul>
+            <ul id="TPteams1">
               {team.drivers.map((driver) => (
-                <li key={driver.driverId}>
-                  {/* Use Link to create a link to the driver details page */}
+                <li key={driver.driverId} id="TPdrivers">
+
                   <Link to={`/driver-details/${driver.driverId}`}>
-                    <strong>{`${driver.givenName} ${driver.familyName}`}</strong>
+                    <strong >♡{`${driver.givenName} ${driver.familyName}`}♡</strong>
                   </Link>{" "}
                 </li>
               ))}
@@ -106,6 +109,7 @@ function TeamsPage() {
           </li>
         ))}
       </ul>
+      </div>
     </div>
   );
 }

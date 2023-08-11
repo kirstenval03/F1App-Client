@@ -45,7 +45,9 @@ function LoginPage() {
 
       <div className="LIcontainer1">
 
-        <h1 id="LIh1">Login</h1>
+        <h1 id="LIh1">Ready to Race? 
+        <br />
+        Log In</h1>
         <br />
 
         <form onSubmit={handleLoginSubmit} id="LIcontainer2">
@@ -86,6 +88,7 @@ function LoginPage() {
               </defs>
             </svg>
             <label id="LIlabel">Password:</label>
+            
             <input
               id="LIform"
               type="password"
@@ -93,6 +96,7 @@ function LoginPage() {
               value={password}
               onChange={handlePassword}
             />
+            
           </div>
           <br />
           <br />

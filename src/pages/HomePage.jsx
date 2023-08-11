@@ -5,15 +5,7 @@ import { Link } from "react-router-dom";
 function HomePage() {
   return (
 <div className='HomePage'>
-  <div id='HPbanner1'>
-    <h1>
-      <Link to="/items">Merch Store</Link>
-    </h1>
-    <p>
-      ⇡ Click here to purchase your favorite items ⇡
-    </p>
-    <img src="https://res.cloudinary.com/dhqplbne3/image/upload/v1691765671/Formula1-App/merchPrev.png" alt="" />
-  </div>
+  
 
   <div id='secundaryBanners'>
     <div id='HPbanner2'>
@@ -35,6 +27,15 @@ function HomePage() {
       </p>
       <img src="https://s40320.pcdn.co/wp-content/uploads/2022/03/ezgif.com-gif-maker-2.gif" alt="" />
     </div>
+  </div>
+  <div id='HPbanner1'>
+    <h1>
+      <Link to="/items">Merch Store</Link>
+    </h1>
+    <p>
+      ⇡ Click here to purchase your favorite items ⇡
+    </p>
+    <img src="https://res.cloudinary.com/dhqplbne3/image/upload/v1691765671/Formula1-App/merchPrev.png" alt="" />
   </div>
 </div>
 

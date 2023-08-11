@@ -23,7 +23,7 @@ const ItemsPage = () => {
                 {items.map((item) => (
                     <Link to={`/item-details/${item._id}`} class="item-link" key={item._id}>
                         <div class="item-card">
-                            <img class="item-image" src={item.image} alt="item" />
+                            <img class="item-image1" src={item.image} alt="item" />
                             <h3 class="item-name">{item.name}</h3>
                             <p class="item-cost"> $ {item.cost} USD</p>
                         </div>

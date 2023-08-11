@@ -428,61 +428,68 @@ nav {
 
 /* MERCH PAGE STYLE */
 #all-items {
-    width: 100vw;
-    padding: 3vh 5vh;
-    height: 100vw;
-    background: #af0034;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  #allItemsHeading {
-    color: #f7f5f0;
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  .item-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .item-link {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  .item-card {
-    background-color: #eec9d4;
-    border-radius: 2px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 25vh; 
-    height: 45vh;
-    max-width: 300px; 
-  }
-  
-  .item-image {
-    width: 100%;
-    height: max-content;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-  
-  .item-name {
-    font-size: 1.5rem;
-    margin-top: 10px;
-  }
-  
-  .item-cost {
-    font-size: 1.2rem;
-    margin-top: 5px;
-  }
+  width: 100vw;
+  padding: 3vh 5vh;
+  height: auto;
+  min-height: 100vh;
+  background: #af0034;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#allItemsHeading {
+  color: #f7f5f0;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.item-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.item-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.item-card {
+  background-color: #eec9d4;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25vh; 
+  height: 40vh;
+  max-width: 300px;
+  transition: transform 0.3s; /* Add transition for smooth effect */
+}
+
+.item-card:hover {
+  transform: scale(1.1); 
+}
+
+.item-image1 {
+  width: 100%;
+  height: max-content;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.item-name {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+.item-cost {
+  font-size: 1.2rem;
+  margin-top: 5px;
+}
+
   
   /* ADD ITEM PAGE STYLE */
   #new-item {
@@ -839,9 +846,13 @@ nav {
   .empty-cart {
     text-align: center;
     margin-top: 5vh;
+    height: 16vh;
+    background-color: #afbccd;
+    border-radius: 2vh;
   }
   
   .empty-cart a {
+    
     color: #af0034;
     text-decoration: underline;
   }

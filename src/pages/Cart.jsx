@@ -86,41 +86,44 @@ const Cart = () => {
 };
   
   return (
-<div>
+<div class="cart-page">
   {cart.items && cart.items.length ? (
-    <div>
+    <div class="cart-items">
       {Object.values(groupedItems).map((groupedItem) => {
         const { _id, name, cost, image, quantity } = groupedItem;
         return (
-          <div key={_id}>
+          <div class="cart-item" key={_id}>
+            <img class="item-image" src={image} alt="item" />
             <Link to={`/item-details/${_id}`}>
-              <h3>{name}</h3>
+              <h3 class="item-name">{name}</h3>
             </Link>
-            <img id="itemImg" src={image} alt="item" />
-            <h3>$ {cost} usd</h3>
-            <p>Quantity: {quantity}</p>
-            <button onClick={() => decreaseItem(_id)}>-1 item</button>
-            <button onClick={() => increaseItem(_id)}>+1 item</button>
-            <button onClick={() => deleteFromCart(_id)}>Remove item</button>
+            <h3 class="item-cost">$ {cost} USD</h3>
+            <p class="item-quantity">Quantity: {quantity}</p>
+            <button class="item-button" onClick={() => decreaseItem(_id)}>-1 item</button>
+            <button class="item-button" onClick={() => increaseItem(_id)}>+1 item</button>
+            <button class="item-button" onClick={() => deleteFromCart(_id)}>Remove item</button>
           </div>
-            );
-          })}
+        );
+      })}
 
-          <p>Your purchase summary:</p>
-          <p>Subtotal: $ {cart.subtotal} </p>
-          <p>Shipping: $10</p>
-          <p>Total: $ {cart.total} </p>
-          <button onClick={proceedToPayment}>Proceed to checkout</button>
-        </div>
-      ) : (
-        <div>
-          <h3>Your cart is empty</h3>
-          <p>
-            See all the merch and <Link to="/items">add something</Link>.
-          </p>
-        </div>
-      )}
+      <div class="purchase-summary">
+        <p>Your purchase summary:</p>
+        <p>Subtotal: $ {cart.subtotal}</p>
+        <p>Shipping: $10</p>
+        <p>Total: $ {cart.total}</p>
+        <button class="checkout-button" onClick={proceedToPayment}>Proceed to checkout</button>
+      </div>
     </div>
+  ) : (
+    <div class="empty-cart">
+      <h3>Your cart is empty</h3>
+      <p>
+        See all the merch and <Link to="/items">add something</Link>.
+      </p>
+    </div>
+  )}
+</div>
+
   );
 };
 

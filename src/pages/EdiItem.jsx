@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import { ItemContext } from "../context/item.context" 
+import { ItemContext } from "../context/item.context"
 
 import { get, post } from "../services/authService"
 
@@ -17,11 +17,11 @@ const EditItem = () => {
 
 
     const handleTextChange = (e) => {
-        setItem((prev) => ({...prev, [e.target.name]: e.target.value}))
-      }
+        setItem((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+    }
 
     const handleNumberChange = (e) => {
-        setItem((prev) => ({...prev, [e.target.name]: Number(e.target.value)}))
+        setItem((prev) => ({ ...prev, [e.target.name]: Number(e.target.value) }))
     }
 
     const handleSubmit = (e) => {
@@ -34,7 +34,7 @@ const EditItem = () => {
                 let newItems = [...items]
                 let itemIndex = items.findIndex(item => item._id === response.data._id)
                 newItems[itemIndex] = response.data
-                
+
                 setItems(newItems)
 
                 navigate(`/item-details/${response.data._id}`)
@@ -48,7 +48,7 @@ const EditItem = () => {
 
     useEffect(() => {
 
-        if(!items.length) {
+        if (!items.length) {
 
             get(`/items/item-detail/${itemId}`)
                 .then((response) => {
@@ -62,42 +62,75 @@ const EditItem = () => {
         } else {
 
             let thisItem = items.find((item) => item._id === itemId)
-    
+
             setItem(thisItem)
         }
 
     }, [])
 
-  return (
-    <div>
-       <h1>Edit Item</h1>
+    return (
+        <div id="edit-item">
+            <img id="TPh1" src="https://res.cloudinary.com/dhqplbne3/image/upload/v1691733912/Formula1-App/EITitle.png"></img>
 
-       {item ? 
-       
-       <form onSubmit={handleSubmit}>
+            {item ? (
 
-            <label>Image</label>
-            <input type="text" name="image" value={item.image} onChange={handleTextChange} /> 
 
-            <label>Size</label>
-            <input type="text" name="size" value={item.size} onChange={handleTextChange} /> 
+                <form onSubmit={handleSubmit} className="AIform">
 
-            <label>Description</label>
-            <input type="text" name="description" value={item.description} onChange={handleTextChange} /> 
+                    <label className="AIlabel">Title: </label>
+                    <input
+                        type="text"
+                        name="image"
+                        value={item.name}
+                        onChange={handleTextChange}
+                        className="AIinput"
+                    />
 
-            <label>Cost</label>
-            <input type="number" name="cost" value={item.cost} onChange={handleNumberChange} /> 
+                    <label className="AIlabel">Image</label>
+                    <input
+                        type="text"
+                        name="image"
+                        value={item.image}
+                        onChange={handleTextChange}
+                        className="AIinput"
+                    />
 
-            <button type="submit">Update Item</button>
+                    <label className="AIlabel">Size</label>
+                    <input
+                        type="text"
+                        name="size"
+                        value={item.size}
+                        onChange={handleTextChange}
+                        className="AIinput"
+                    />
 
-       </form>
+                    <label className="AIlabel">Description</label>
+                    <input
+                        type="text"
+                        name="description"
+                        value={item.description}
+                        onChange={handleTextChange}
+                        className="AIinput"
+                    />
 
-       : <p>Loading...</p>
-       
-       }
+                    <label className="AIlabel">Cost</label>
+                    <input
+                        type="number"
+                        name="cost"
+                        value={item.cost}
+                        onChange={handleNumberChange}
+                        className="AIinput"
+                    />
 
-    </div>
-  )
+                    <button type="submit" className="AIbutton">
+                        Update Item
+                    </button>
+                </form>
+            ) : (
+                <p>Loading...</p>
+            )}
+        </div>
+    )
 }
 
 export default EditItem

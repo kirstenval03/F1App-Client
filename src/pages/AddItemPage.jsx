@@ -47,27 +47,55 @@ const AddItem = () => {
 
   return (
     <div id="new-item">
-      <h1>Add a new item to the store</h1>
-
-      <form onSubmit={handleSubmit}>
-        <label>Name</label>
-        <input type="text" name="name" value={item.name} onChange={handleTextChange} />
-
-        <label>Image</label>
-        <input type="text" name="image" value={item.image} onChange={handleTextChange} />
-
-        <label>Size</label>
-        <input type="text" name="size" value={item.size} onChange={handleTextChange} />
-
-        <label>Description</label>
-        <input type="text" name="description" value={item.description} onChange={handleTextChange} />
-
-        <label>Cost</label>
-        <input type="number" name="cost" value={item.cost} onChange={handleNumberChange} />
-
-        <button type="submit">List Item</button>
-      </form>
-    </div>
+    <img id="TPh1" src="https://res.cloudinary.com/dhqplbne3/image/upload/v1691732909/Formula1-App/AITitle.png"></img>
+  
+    <form onSubmit={handleSubmit} className="AIform">
+      <label className="AIlabel">Title:</label>
+      <input
+        type="text"
+        name="name"
+        value={item.name}
+        onChange={handleTextChange}
+        className="AIinput"
+      />
+      <label className="AIlabel">Image: </label>
+      <input
+        type="text"
+        name="image"
+        value={item.image}
+        onChange={handleTextChange}
+        className="AIinput"
+      />
+      <label className="AIlabel">Size: </label>
+      <input
+        type="text"
+        name="size"
+        value={item.size}
+        onChange={handleTextChange}
+        className="AIinput"
+      />
+      <label className="AIlabel">Description: </label>
+      <input
+        type="text"
+        name="description"
+        value={item.description}
+        onChange={handleTextChange}
+        className="AIinput"
+      />
+      <label className="AIlabel">Cost: </label>
+      <input
+        type="number"
+        name="cost"
+        value={item.cost}
+        onChange={handleNumberChange}
+        className="AIinput"
+      />
+      <button type="submit" className="AIbutton">
+        List Item
+      </button>
+    </form>
+  </div>
+  
   );
 };
 

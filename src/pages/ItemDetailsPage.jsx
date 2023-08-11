@@ -77,34 +77,37 @@ const ItemDetails = () => {
     }, [itemId, items]);
 
     return (
-        <div>
-            <h1>Item Details</h1>
+<div id="item-details">
+  
 
-            {item ? (
-                <div>
-                    {isOwner() ? (
-                        <>
-                            <Link to={`/edit-item/${item._id}`}>
-                                <button>Edit Item</button>
-                            </Link>
-                            <button onClick={deleteItem}>Remove Listing</button>
-                        </>
-                    ) : (
-                        <button onClick={addToCart}>
-                            {user ? "Add to Cart" : "Log in to Add to Cart"}
-                        </button>
-                    )}
+  {item ? (
+    <div class="item-container1">
+      <div class="item-buttons">
+        {isOwner() ? (
+          <>
+            <Link to={`/edit-item/${item._id}`}>
+              <button>Edit Item</button>
+            </Link>
+            <button onClick={deleteItem}>Remove Listing</button>
+          </>
+        ) : (
+          <button onClick={addToCart}>
+            {user ? "Add to Cart" : "Log in to Add to Cart"}
+          </button>
+        )}
+      </div>
 
-                    <h3>{item.name}</h3>
-                    <img id="itemImg" src={item.image} alt="item" />
-                    <p>{item.size}</p>
-                    <p>{item.description}</p>
-                    <h5>${item.cost}</h5>
-                </div>
-            ) : (
-                <p>Loading...</p>
-            )}
-        </div>
+      <h3 class="item-name1">{item.name}</h3>
+      <img id="itemImg1" src={item.image} alt="item" />
+      <p class="item-details1">Size: {item.size}</p>
+      <p class="item-details1">Description: {item.description}</p>
+      <h5 class="item-cost1">$: {item.cost} usd</h5>
+    </div>
+  ) : (
+    <p>Loading...</p>
+  )}
+</div>
+
     );
 };
 

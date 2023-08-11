@@ -93,7 +93,7 @@ const Cart = () => {
         const { _id, name, cost, image, quantity } = groupedItem;
         return (
           <div class="cart-item" key={_id}>
-            <img class="item-image" src={image} alt="item" />
+            <img class="item-image3" src={image} alt="item" />
             <Link to={`/item-details/${_id}`}>
               <h3 class="item-name">{name}</h3>
             </Link>

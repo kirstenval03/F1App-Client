@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 function DriverDetailsPage() {
   const [driverInfo, setDriverInfo] = useState({});
@@ -51,49 +52,57 @@ function DriverDetailsPage() {
   const driverImageUrl = driverImageMap[driverId] || "default_image_url";
 
   return (
-<div className="DriverDetailsPage">
-  
-    <img
-      id="DDh1Image"
-      src="https://res.cloudinary.com/dhqplbne3/image/upload/v1691721007/Formula1-App/Driver_4_vdcatu.png"
-      alt="Driver Banner"
-    />
+    <div className="DriverDetailsPage">
+
+      <img
+        id="DDh1Image"
+        src="https://res.cloudinary.com/dhqplbne3/image/upload/v1691721007/Formula1-App/Driver_4_vdcatu.png"
+        alt="Driver Banner"
+      />
 
 
-  <div id="DDcontainer">
-    <div id="DDcontainer1">
-      <img src={driverImageUrl} alt="Driver" id="DDImg" />
-      <div id="DDinfo">
-        <p className="DDp">
-          <strong>Name:</strong> <br />
-          {`${driverInfo.givenName} ${driverInfo.familyName}`}
-        </p>
-        <p className="DDp">
-          <strong>Date of Birth:</strong> <br />
-          {driverInfo.dateOfBirth}
-        </p>
-        <p className="DDp">
-          <strong>Nationality:</strong> <br />
-          {driverInfo.nationality}
-        </p>
-        <p className="DDp">
-          <strong>Permanent Number:</strong> <br />
-          {driverInfo.permanentNumber}
-        </p>
-        <p className="DDp">
-          <strong>Wikipedia URL:</strong> <br />
-          <a
-            href={driverInfo.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {driverInfo.url}
-          </a>
-        </p>
+      <div id="DDcontainer">
+
+        <div id="DDcontainer1">
+
+
+          <img src={driverImageUrl} alt="Driver" id="DDImg" />
+          <div id="DDinfo">
+
+            <Link to="/teams" className="BackLink">
+              ← Back to Teams
+            </Link>
+
+            <p className="DDp">
+              <strong>Name:</strong> <br />
+              {`${driverInfo.givenName} ${driverInfo.familyName}`}
+            </p>
+            <p className="DDp">
+              <strong>Date of Birth:</strong> <br />
+              {driverInfo.dateOfBirth}
+            </p>
+            <p className="DDp">
+              <strong>Nationality:</strong> <br />
+              {driverInfo.nationality}
+            </p>
+            <p className="DDp">
+              <strong>Permanent Number:</strong> <br />
+              {driverInfo.permanentNumber}
+            </p>
+            <p className="DDp">
+              <strong>Wikipedia URL:</strong> <br />
+              <a
+                href={driverInfo.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {driverInfo.url}
+              </a>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
 
   );

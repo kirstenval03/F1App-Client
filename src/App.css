@@ -98,7 +98,6 @@ Img {
 #SPgif{
     height: 70vh ;
     width: 67.3vh;
-    border-radius: ;
 }
 
 /* LOGIN PAGE STYLE */
@@ -847,3 +846,87 @@ nav {
     text-decoration: underline;
   }
   
+/* HOME PAGE STYLE */
+/* HOME PAGE STYLE */
+.HomePage {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to bottom, #000000 0%, #dfdcdd 100%);
+  }
+  
+  #HPbanner1,
+  #HPbanner2,
+  #HPbanner3 {
+    margin: 2vh 0;
+    padding: 2vh;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    height: auto;
+  }
+  
+  #HPbanner1 h1,
+#HPbanner2 h1,
+#HPbanner3 h1 {
+  color: #af0034;
+  font-size: 6vh;
+  margin-bottom: 1vh;
+  transition: font-size 0.3s; 
+}
+
+#HPbanner1 h1:hover,
+#HPbanner2 h1:hover,
+#HPbanner3 h1:hover {
+  font-size: 9vh;
+}
+  
+  #HPbanner1 p,
+  #HPbanner2 p,
+  #HPbanner3 p {
+    color: #fffafa;
+    font-size: 2.2vh;
+    margin-bottom: 3vh;
+  }
+  
+  #HPbanner1 a,
+  #HPbanner2 a,
+  #HPbanner3 a {
+    color: #af0034;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  #HPbanner1 a:hover,
+  #HPbanner2 a:hover,
+  #HPbanner3 a:hover {
+    text-decoration:dotted;
+    color: #d7e6f0;
+  }
+  
+  #HPbanner1 img,
+  #HPbanner2 img,
+  #HPbanner3 img {
+    width: 90%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  #secundaryBanners {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 70%;
+    margin-top: 5vh;
+  }
+  
+  #HPbanner2,
+  #HPbanner3 {
+    margin: 0 1vh;
+    padding: 3vh;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0px 
+}

@@ -14,8 +14,8 @@ const ItemDetails = () => {
     const navigate = useNavigate();
 
     const isOwner = () => {
-        return user._id === item.owner;
-    };
+      return item && user && user._id === item.owner;
+  };
 
     const deleteItem = () => {
         post(`/items/delete-item/${itemId}`, item)

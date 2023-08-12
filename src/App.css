@@ -378,69 +378,76 @@ button:hover {
   
 /* CURRENT SEASON PAGE STYLE */
 #CurrentSeasonPage {
-    width: 100vw;
-    padding: 3vh 5vh 5vh 5vh;
-    background: #252424;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  #CurrentSeasonPage h1 {
-    font-size: 2.5rem;
-    color: #af0034;
-    margin-bottom: 20px;
-  }
-  
-  #CurrentSeasonPage ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  #CurrentSeasonPage li {
-    width: 40vh;
-    height: 450px; /* Adjust the height as desired */
-    margin: 20px;
-    padding: 20px;
-    background-color: #efe4d0;
-    border-radius: 8px;
-    color: #ed789b;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  #CurrentSeasonPage li:nth-child(odd) {
-    background-color: #f5dfe5;
-    color: #f7f5f0;
-  }
-  
-  #CurrentSeasonPage h2 {
-    font-size: 2rem;
-    color: #559aef;
-    margin-bottom: 10px;
-  }
-  
-  #CurrentSeasonPage p {
-    font-size: 1.6rem;
-    color: #000;
-    margin: 5px 0;
-  }
-  
-  #CurrentSeasonPage a {
-    color: #559aef;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  #CurrentSeasonPage a:hover {
-    color: #af0034;
-  }
+  width: 100vw;
+  padding: 3vh 5vh 5vh 5vh;
+  background: #252424;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#CurrentSeasonPage h1 {
+  font-size: 2.5rem;
+  color: #af0034;
+  margin-bottom: 20px;
+}
+
+#CurrentSeasonPage ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#CurrentSeasonPage li {
+  width: 40vh;
+  height: auto; /* Adjust the height as desired */
+  margin: 20px;
+  padding: 20px;
+  background-color: #efe4d0;
+  border-radius: 8px;
+  color: #ed789b;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#CurrentSeasonPage li:nth-child(odd) {
+  background-color: #f5dfe5;
+  color: #f7f5f0;
+}
+
+#CurrentSeasonPage h2 {
+  font-size: 2rem;
+  color: #559aef;
+  margin-bottom: 10px;
+}
+
+#CurrentSeasonPage p {
+  font-size: 1.6rem;
+  color: #000;
+  margin: 5px 0;
+}
+
+#CurrentSeasonPage a {
+  color: #559aef;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+#CurrentSeasonPage a:hover {
+  color: #af0034;
+}
+
+#CurrentSeasonPage img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
 
 /* MERCH PAGE STYLE */
 #all-items {

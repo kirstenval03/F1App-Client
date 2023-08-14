@@ -1,3 +1,4 @@
+
 /* NAVBAR STYLE */
 nav {
   background-color: #000000;
@@ -165,103 +166,177 @@ font-size: 9vh;
   }
 }
 
-
 /* SignupPage */
 
 .SignupPage {
-    display: flex;
-    width: 156vh;
-    height: 18.2vh;
-    padding:  37.2vh 24.7vh  37.2vh 24.7vh;
-    justify-content: center;
-    align-items: center;
-    background: #af0034;
+  display: flex;
+  width: 100%;
+  height: 18.2vh;
+  padding:  37.2vh 0vh  37.2vh 0vh;
+  justify-content: center;
+  align-items: center;
+  background: #af0034;
 }
 
 .SPcontainer1 {
-    width: 65.3vh;
-    height: 70vh;
-    flex-shrink: 0;
-    border-radius:  2.63vh 0vh 0vh  2.63vh;
-    background: #f7f5f0;
+  width: 65.3vh;
+  height: 70vh;
+  flex-shrink: 0;
+  border-radius:  2.63vh 0vh 0vh  2.63vh;
+  background: #f7f5f0;
 
 }
 
 #SPh1 {
-    color: #af0034;
-    text-align: center;
-    font-family: Titillium Web;
-    font-size: 4.2vh;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    width: 76.1vh;
+  color: #af0034;
+  text-align: center;
+  font-family: Titillium Web;
+  font-size: 4.2vh;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  width: 76.1vh;
 }
 
 #SPform {
-    width: 41.3vh;
-    height: 5.2vh;
-    flex-shrink: 0;
-    border-radius: 3.9vh;
-    background: #FFF;
+  width: 41.3vh;
+  height: 5.2vh;
+  flex-shrink: 0;
+  border-radius: 3.9vh;
+  background: #FFF;
 }
 
 #SPlabel {
-    padding-right: 1.3vh;
-    display: flex;
-    align-items: baseline;
-    width: 13.69vh;
-    justify-content: center;
-    font-size: 2.3vh;
+  padding-right: 1.3vh;
+  display: flex;
+  align-items: baseline;
+  width: 13.69vh;
+  justify-content: center;
+  font-size: 2.3vh;
 
 }
 
+
 #SPbutton {
-    width:  20.54vh;
-    height: 5.2vh;
-    flex-shrink: 0;
-    border-radius: 3.94vh;
-    background: #af0034;
-    color: #FFF;
-    text-align: center;
-    font-family: Rubik;
-    font-size: 2vh;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    text-transform: uppercase;
+  width:  20.54vh;
+  height: 5.2vh;
+  flex-shrink: 0;
+  border-radius: 3.94vh;
+  background: #af0034;
+  color: #FFF;
+  text-align: center;
+  font-family: Rubik;
+  font-size: 2vh;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
 }
 
 
 #SPcontainer2 {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: baseline;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: baseline;
 }
 
 #SPlabel1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 1.36vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1.36vh;
 }
 
 #SPmessage {
-    width: 79.1vh;
+  width: 79.1vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2.1vh;
+}
+
+#SPbuttoncontainer {
+  width: 76.1vh;
+}
+#SPgif{
+  height: 70vh ;
+  width: 67.3vh;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .SignupPage {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    padding:  5vh 0vh  5vh 0vh;
+    margin-right: 0%;
+    background: #af0034;
+  }
+  .SPcontainer1 {
+    width: 85%;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    padding-right: 0;
+  }
+  #SPbuttoncontainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  #SPgif {
+    margin-top: 0;
+    width: 87.5%;
+    height: auto;
+  }
+  #SPmessage {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 2.1vh;
+  }
+  #SPh1 {
+    color: #af0034;
+    text-align: center;
+    font-family: Titillium Web;
+    font-size: 3.2vh;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: 80%;
+  }
+  #SPform {
+    width: 25.3vh;
+    height: 4.2vh;
+    flex-shrink: 0;
+    border-radius: 3.9vh;
+    background: #FFF;
+  }
+  #SPlabel {
+    padding-right: 0vh;
+    display: flex;
+    align-items: baseline;
+    width: 13.69vh;
+    justify-content: center;
+    font-size: 2vh;
+  
+  }
+  #SPlabel1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+ 
+  
+
 }
 
-#SPbuttoncontainer {
-    width: 76.1vh;
-}
-#SPgif{
-    height: 70vh ;
-    width: 67.3vh;
-}
+
 
 /* LOGIN PAGE STYLE */
 

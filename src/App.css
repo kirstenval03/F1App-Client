@@ -1,7 +1,152 @@
-Img {
-    height: 200px;
-    width: max-content;
+/* NAVBAR STYLE */
+nav {
+  background-color: #000000;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
 }
+
+#NBlogo {
+  height: 8vh;
+}
+
+#NBbuttons {
+  width: 200vh;
+  display: flex;
+  align-items: center;
+}
+
+button {
+  color: #1a1818;
+  background-color: #af0034;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  background-color: #af0034;
+  color: #eef4f9;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+  }
+
+  #NBlogo {
+    height: auto;
+    width: 12%; /* Adjust the width as needed */
+    margin-bottom: 10px;
+  }
+
+  #NBbuttons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  button {
+    width: 80%; /* Adjust the width as needed */
+    margin: 5px 0;
+  }
+}
+
+/* HOME PAGE STYLE */
+.HomePage {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to bottom, #000000 0%, #dfdcdd 100%);
+}
+
+#HPbanner1,
+#HPbanner2,
+#HPbanner3 {
+  margin: 2vh 0;
+  padding: 2vh;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  height: auto;
+  background: linear-gradient(to bottom, #f0dcdc 0%, #180209 100%);
+}
+
+#HPbanner1 h1,
+#HPbanner2 h1,
+#HPbanner3 h1 {
+color: #af0034;
+font-size: 6vh;
+margin-bottom: 1vh;
+transition: font-size 0.3s; 
+}
+
+#HPbanner1 h1:hover,
+#HPbanner2 h1:hover,
+#HPbanner3 h1:hover {
+font-size: 9vh;
+}
+
+#HPbanner1 p,
+#HPbanner2 p,
+#HPbanner3 p {
+  color: #fffafa;
+  font-size: 2.2vh;
+  margin-bottom: 3vh;
+}
+
+#HPbanner1 a,
+#HPbanner2 a,
+#HPbanner3 a {
+  color: #af0034;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#HPbanner1 a:hover,
+#HPbanner2 a:hover,
+#HPbanner3 a:hover {
+  text-decoration:dotted;
+  color: #d7e6f0;
+}
+
+#HPbanner1 img,
+#HPbanner2 img,
+#HPbanner3 img {
+  width: 90%;
+  height: auto;
+  border-radius: 5px;
+}
+
+#secundaryBanners {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 70%;
+  margin-top: 5vh;
+}
+
+#HPbanner2,
+#HPbanner3 {
+  margin: 0 1vh;
+  padding: 3vh;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0px 
+}
+
 
 /* SignupPage */
 
@@ -204,56 +349,6 @@ Img {
     width: 65.3vh; 
 }
 
-/* NAVBAR STYLE */
-nav {
-  background-color: #000000;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-}
-
-#NBlogo {
-  height: 8vh;
-}
-
-#NBbuttons {
-  width: 200vh;
-  display: flex;
-  align-items: center;
-}
-
-button {
-  color: #1a1818;
-  background-color: #af0034;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  margin: 0 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-button:hover {
-  background-color: #af0034;
-  color: #eef4f9;
-}
-
-@media (max-width: 768px) {
-  nav {
-    height: auto;
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
-  #NBbuttons {
-    width: 100%;
-    justify-content: flex-end;
-    padding: 10px 0;
-  }
-}
 
 
 /* TEAMS PAGE STYLE */
@@ -881,88 +976,3 @@ button:hover {
     text-decoration: underline;
   }
   
-/* HOME PAGE STYLE */
-/* HOME PAGE STYLE */
-.HomePage {
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: linear-gradient(to bottom, #000000 0%, #dfdcdd 100%);
-  }
-  
-  #HPbanner1,
-  #HPbanner2,
-  #HPbanner3 {
-    margin: 2vh 0;
-    padding: 2vh;
-    border-radius: 5px;
-    text-align: center;
-    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    height: auto;
-    background: linear-gradient(to bottom, #f0dcdc 0%, #180209 100%);
-  }
-  
-  #HPbanner1 h1,
-#HPbanner2 h1,
-#HPbanner3 h1 {
-  color: #af0034;
-  font-size: 6vh;
-  margin-bottom: 1vh;
-  transition: font-size 0.3s; 
-}
-
-#HPbanner1 h1:hover,
-#HPbanner2 h1:hover,
-#HPbanner3 h1:hover {
-  font-size: 9vh;
-}
-  
-  #HPbanner1 p,
-  #HPbanner2 p,
-  #HPbanner3 p {
-    color: #fffafa;
-    font-size: 2.2vh;
-    margin-bottom: 3vh;
-  }
-  
-  #HPbanner1 a,
-  #HPbanner2 a,
-  #HPbanner3 a {
-    color: #af0034;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  #HPbanner1 a:hover,
-  #HPbanner2 a:hover,
-  #HPbanner3 a:hover {
-    text-decoration:dotted;
-    color: #d7e6f0;
-  }
-  
-  #HPbanner1 img,
-  #HPbanner2 img,
-  #HPbanner3 img {
-    width: 90%;
-    height: auto;
-    border-radius: 5px;
-  }
-  
-  #secundaryBanners {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 70%;
-    margin-top: 5vh;
-  }
-  
-  #HPbanner2,
-  #HPbanner3 {
-    margin: 0 1vh;
-    padding: 3vh;
-    border-radius: 5px;
-    text-align: center;
-    box-shadow: 0px 
-}

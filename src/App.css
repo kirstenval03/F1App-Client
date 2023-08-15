@@ -516,8 +516,8 @@ font-size: 9vh;
 
 /* TEAMS PAGE STYLE */
 .TeamsPage {
-    width: 100vw;
-    padding: 3vh 5vh 5vh 5vh;
+    width: 100%;
+    padding: 3vh 0vh 5vh 0vh;
     background: #af0034;
     display: flex;
     flex-direction: column;
@@ -528,13 +528,14 @@ font-size: 9vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
+    width: 100%;
+    height: auto;
     margin-top: -15px;
-    margin-bottom: 20px;
+    margin-bottom: 1vh;
   }
   
   #TPteams {
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -542,7 +543,7 @@ font-size: 9vh;
 
   
   #TPlist {
-    width: 30vh;
+    width: 20vh;
     height: auto;
     margin: 10px;
     padding: 10px;
@@ -570,6 +571,7 @@ font-size: 9vh;
     padding-left: 0%;
   }
 
+  
 /* DRIVER DETAILS PAGE STYLE */
 .DriverDetailsPage {
     width: 100%;

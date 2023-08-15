@@ -74,12 +74,13 @@ button:hover {
 
 /* HOME PAGE STYLE */
 .HomePage {
-  width: 100vw;
+  width: 100%;
+  min-height: 110vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: linear-gradient(to bottom, #000000 0%, #dfdcdd 100%);
-  padding: 20px;
+  padding: 0px;
 }
 
 #HPbanner1,
@@ -96,6 +97,9 @@ button:hover {
   background: linear-gradient(to bottom, #f0dcdc 0%, #180209 100%);
   @media (max-width: 768px) {
     width: 100%; 
+    margin: 1vh 0;
+    padding: 0vh;
+
 }
 }
 
@@ -145,6 +149,7 @@ font-size: 9vh;
   border-radius: 5px;
 }
 
+
 #secundaryBanners {
   display: flex;
   flex-direction: row; 
@@ -165,6 +170,7 @@ font-size: 9vh;
     padding: 2vh;
   }
 }
+
 
 /* SignupPage */
 
@@ -353,7 +359,7 @@ font-size: 9vh;
 
 .LIcontainer1 {
     width: 65.3vh;
-    height: max-content;
+    height: 55.7vh;
     flex-shrink: 0;
     border-radius:  2.63vh 0vh 0vh  2.63vh;
     background: #f7f5f0;
@@ -517,7 +523,8 @@ font-size: 9vh;
 /* TEAMS PAGE STYLE */
 .TeamsPage {
     width: 100%;
-    padding: 3vh 0vh 5vh 0vh;
+    height: 100%;
+    padding: 3vh 0vh 9vh 0vh;
     background: #af0034;
     display: flex;
     flex-direction: column;
@@ -528,7 +535,7 @@ font-size: 9vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 70vh;
     height: auto;
     margin-top: -15px;
     margin-bottom: 1vh;
@@ -543,7 +550,7 @@ font-size: 9vh;
 
   
   #TPlist {
-    width: 20vh;
+    width: 30vh;
     height: auto;
     margin: 10px;
     padding: 10px;

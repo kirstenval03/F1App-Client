@@ -29,14 +29,14 @@ function Navbar() {
 
               {isStaffUser(user) && (
                 <Link to="/item/new-item">
-                  <button>Add Item</button>
+                  <button className="NBLI">Add Item</button>
                 </Link>
               )}
             </>
           )}
 
           <Link to="/cart">
-            <button>Your Cart</button>
+            <button className="NBLI">Your Cart</button>
           </Link>
         </>
       ) : (

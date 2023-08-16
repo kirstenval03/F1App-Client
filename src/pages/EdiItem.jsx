@@ -75,54 +75,54 @@ const EditItem = () => {
             {item ? (
 
 
-                <form onSubmit={handleSubmit} className="AIform">
+                <form onSubmit={handleSubmit} className="EIform">
 
-                    <label className="AIlabel">Title: </label>
+                    <label className="EIlabel">Title: </label>
                     <input
                         type="text"
                         name="image"
                         value={item.name}
                         onChange={handleTextChange}
-                        className="AIinput"
+                        className="EIinput"
                     />
 
-                    <label className="AIlabel">Image</label>
+                    <label className="EIlabel">Image</label>
                     <input
                         type="text"
                         name="image"
                         value={item.image}
                         onChange={handleTextChange}
-                        className="AIinput"
+                        className="EIinput"
                     />
 
-                    <label className="AIlabel">Size</label>
+                    <label className="EIlabel">Size</label>
                     <input
                         type="text"
                         name="size"
                         value={item.size}
                         onChange={handleTextChange}
-                        className="AIinput"
+                        className="EIinput"
                     />
 
-                    <label className="AIlabel">Description</label>
+                    <label className="EIlabel">Description</label>
                     <input
                         type="text"
                         name="description"
                         value={item.description}
                         onChange={handleTextChange}
-                        className="AIinput"
+                        className="EIinput"
                     />
 
-                    <label className="AIlabel">Cost</label>
+                    <label className="EIlabel">Cost</label>
                     <input
                         type="number"
                         name="cost"
                         value={item.cost}
                         onChange={handleNumberChange}
-                        className="AIinput"
+                        className="EIinput"
                     />
 
-                    <button type="submit" className="AIbutton">
+                    <button type="submit" className="EIbutton">
                         Update Item
                     </button>
                 </form>

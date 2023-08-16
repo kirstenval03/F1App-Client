@@ -5,7 +5,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 1vh 10vh;
 }
 
 #NBlogo {
@@ -16,6 +16,11 @@ nav {
   width: 200vh;
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+nav a{
+  display: flex;
+  justify-content: center;
 }
 
 button {
@@ -33,6 +38,10 @@ button {
 button:hover {
   background-color: #af0034;
   color: #eef4f9;
+}
+.NBLI{
+  display: flex;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {
@@ -786,26 +795,20 @@ font-size: 9vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
-    padding: 5vh 5vh 5vh 5vh;
+    width: 100%;
+    padding: 5vh 0vh 0vh 0vh;
+    min-height: 100vh;
     background: #af0034;
   }
   
   #AIh1 {
-    color: #af0034;
-    text-align: center;
-    font-family: Titillium Web;
-    font-size: 4.2vh;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
     width: 100%;
-    margin-bottom: 3vh;
+    max-width: 100vh;
   }
   
   .AIform {
-    width: 80vh;
-    padding: 2vh;
+    width: 50%;
+    padding: 1vh;
     border-radius: 3.9vh;
     background: #f7f5f0;
     display: flex;
@@ -818,10 +821,12 @@ font-size: 9vh;
     align-items: center;
     margin-bottom: 1vh;
     font-size: 2.3vh;
+    width: 100%;
+    justify-content: center;
   }
   
   .AIinput {
-    width: 80%;
+    width: 70%;
     padding: 1vh;
     border: 1px solid #af0034;
     border-radius: 3px;
@@ -852,12 +857,32 @@ font-size: 9vh;
     outline: none;
   }
 
+@media (max-width: 768px) {
+  #new-item {
+    width: 100%;
+  }
+
+  #AIh1{
+    width: 60%;
+
+  }
+    .AIform {
+        width: 60%; /* Adjust the form width for smaller screens */
+    }
+
+    .AIbutton {
+        width: 60%; /* Adjust the button width for smaller screens */
+    }
+
+}
+
+
   /* EDIT ITEM PAGE */
   #edit-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     padding: 5vh 5vh 5vh 5vh;
     background: #af0034;
   }
@@ -874,8 +899,8 @@ font-size: 9vh;
     margin-bottom: 3vh;
   }
   
-  .AIform {
-    width: 80vh;
+  .EIform {
+    width: 80%;
     padding: 2vh;
     border-radius: 3.9vh;
     background: #f7f5f0;
@@ -884,14 +909,14 @@ font-size: 9vh;
     align-items: center;
   }
   
-  .AIlabel {
+  .EIlabel {
     display: flex;
     align-items: center;
     margin-bottom: 1vh;
     font-size: 2.3vh;
   }
   
-  .AIinput {
+  .EIinput {
     width: 80%;
     padding: 1vh;
     border: 1px solid #af0034;
@@ -900,7 +925,7 @@ font-size: 9vh;
     font-size: 1.8vh;
   }
   
-  .AIbutton {
+  .EIbutton {
     width: 30%;
     padding: 1vh;
     border: none;
@@ -914,104 +939,96 @@ font-size: 9vh;
     transition: background 0.3s, color 0.3s;
   }
   
-  .AIbutton:hover {
+  .EIbutton:hover {
     background: #fff;
     color: #af0034;
   }
   
-  .AIbutton:focus {
+  .EIbutton:focus {
     outline: none;
   }
   
-  /* ITEM DETAILS PAGE STYLE */
+/* ITEM DETAILS PAGE STYLE */
 
 #item-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100vw;
-    padding: 5vh 5vh;
-    background: #af0034;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 5vh 0vh;
+  background: #af0034;
 }
 
 #IDh1 {
-    color: #f7f7f7;
-    text-align: center;
-    font-family: Titillium Web;
-    font-size: 4.2vh;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    width: 100%;
-    margin-bottom: 3vh;
+  color: #f7f7f7;
+  text-align: center;
+  font-family: Titillium Web;
+  font-size: 4.2vh;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  width: 100%;
+  margin-bottom: 1vh;
 }
 
 .item-container1 {
-    width: 80vh;
-    padding: 2vh;
-    border-radius: 3.9vh;
-    background: #f5f1e7;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 80%;
+  max-width: 400px; 
+  padding: 7vh;
+  padding-bottom: 1vh;
+  border-radius: 3.9vh;
+  background: #f5f1e7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .item-buttons {
-    width: 80vh;
-    margin-bottom: 2vh;
-    display: flex;
-    justify-content: flex-start;
+  width: 80%;
+  max-width: 400px; 
+  margin-bottom: 1vh;
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center; 
 }
 
 .item-buttons button {
-    padding: 1vh 3vh;
-    border: none;
-    border-radius: 3.94vh;
-    background: #af0034;
-    color: #fff;
-    font-size: 2vh;
-    font-weight: 500;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.3s, color 0.3s;
-    margin-right: 1vh;
-}
-
-.item-buttons button:last-child {
-    margin-right: 0;
-}
-
-.item-buttons button:hover {
-    background: #fff;
-    color: #af0034;
-}
-
-.item-buttons button:focus {
-    outline: none;
+  padding: 1vh 3vh;
+  border: none;
+  border-radius: 3.94vh;
+  background: #af0034;
+  color: #fff;
+  font-size: 2vh;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  margin: 1vh; 
 }
 
 .item-name1 {
-    font-size: 4.5vh;
-    margin: 1vh 0;
-    color: #af0034;
+  font-size: 3.5vh; 
+  margin: 1vh 0;
+  color: #af0034;
 }
 
 #itemImg1 {
-    height: 40vh;
-    border-radius: 10px;
-    margin: 2vh 0;
+  width: 90%; 
+  height: auto; 
+  border-radius: 10px;
+  margin: 2vh 0;
 }
 
 .item-details1 {
-    font-size: 2.2vh;
-    text-align: center;
-    margin-bottom: 2vh;
+  font-size: 2vh;
+  text-align: center;
+  margin-bottom: 2vh;
 }
 
 .item-cost1 {
-    font-size: 2.5vh;
-    color: #559aef;
-    font-weight: bold;
+  font-size: 2.2vh; 
+  color: #559aef;
+  font-weight: bold;
 }
 
 /* CART PAGE STYLE */

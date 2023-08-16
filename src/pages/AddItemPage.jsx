@@ -47,7 +47,7 @@ const AddItem = () => {
 
   return (
     <div id="new-item">
-    <img id="TPh1" src="https://res.cloudinary.com/dhqplbne3/image/upload/v1691732909/Formula1-App/AITitle.png"></img>
+    <img id="AIh1" src="https://res.cloudinary.com/dhqplbne3/image/upload/v1691732909/Formula1-App/AITitle.png"></img>
   
     <form onSubmit={handleSubmit} className="AIform">
       <label className="AIlabel">Title:</label>

@@ -70,7 +70,7 @@ const EditItem = () => {
 
     return (
         <div id="edit-item">
-            <img id="TPh1" src="https://res.cloudinary.com/dhqplbne3/image/upload/v1691733912/Formula1-App/EITitle.png"></img>
+            <img id="EIh1" src="https://res.cloudinary.com/dhqplbne3/image/upload/v1691733912/Formula1-App/EITitle.png"></img>
 
             {item ? (
 
@@ -86,7 +86,7 @@ const EditItem = () => {
                         className="EIinput"
                     />
 
-                    <label className="EIlabel">Image</label>
+                    <label className="EIlabel">Image: </label>
                     <input
                         type="text"
                         name="image"
@@ -95,7 +95,7 @@ const EditItem = () => {
                         className="EIinput"
                     />
 
-                    <label className="EIlabel">Size</label>
+                    <label className="EIlabel">Size: </label>
                     <input
                         type="text"
                         name="size"
@@ -104,7 +104,7 @@ const EditItem = () => {
                         className="EIinput"
                     />
 
-                    <label className="EIlabel">Description</label>
+                    <label className="EIlabel">Description: </label>
                     <input
                         type="text"
                         name="description"
@@ -113,7 +113,7 @@ const EditItem = () => {
                         className="EIinput"
                     />
 
-                    <label className="EIlabel">Cost</label>
+                    <label className="EIlabel">Cost: </label>
                     <input
                         type="number"
                         name="cost"

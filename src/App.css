@@ -5,22 +5,25 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1vh 10vh;
+  padding: 1vh 1vh;
 }
 
 #NBlogo {
-  height: 8vh;
+  height: 9vh;
 }
 
 #NBbuttons {
   width: 200vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 nav a{
   display: flex;
   justify-content: center;
+}
+.NBLO{
+  width: min-content;
 }
 
 button {
@@ -39,10 +42,7 @@ button:hover {
   background-color: #af0034;
   color: #eef4f9;
 }
-.NBLI{
-  display: flex;
-  justify-content: center;
-}
+
 
 @media (max-width: 768px) {
   nav {
@@ -69,7 +69,7 @@ button:hover {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   button {
@@ -797,7 +797,7 @@ font-size: 9vh;
     align-items: center;
     width: 100%;
     padding: 5vh 0vh 0vh 0vh;
-    min-height: 100vh;
+    min-height: 110vh;
     background: #af0034;
   }
   
@@ -867,11 +867,11 @@ font-size: 9vh;
 
   }
     .AIform {
-        width: 60%; /* Adjust the form width for smaller screens */
+        width: 60%;
     }
 
     .AIbutton {
-        width: 60%; /* Adjust the button width for smaller screens */
+        width: 60%;
     }
 
 }
@@ -883,24 +883,18 @@ font-size: 9vh;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 5vh 5vh 5vh 5vh;
+    min-height: 110vh;
+    padding: 2vh 0vh 0vh 0vh;
     background: #af0034;
   }
   
   #EIh1 {
-    color: #af0034;
-    text-align: center;
-    font-family: Titillium Web;
-    font-size: 4.2vh;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
     width: 100%;
-    margin-bottom: 3vh;
+    max-width: 100vh;
   }
   
   .EIform {
-    width: 80%;
+    width: 50%;
     padding: 2vh;
     border-radius: 3.9vh;
     background: #f7f5f0;
@@ -914,10 +908,12 @@ font-size: 9vh;
     align-items: center;
     margin-bottom: 1vh;
     font-size: 2.3vh;
+    width: 100%;
+    justify-content: center;
   }
   
   .EIinput {
-    width: 80%;
+    width: 70%;
     padding: 1vh;
     border: 1px solid #af0034;
     border-radius: 3px;
@@ -946,6 +942,24 @@ font-size: 9vh;
   
   .EIbutton:focus {
     outline: none;
+  }
+  @media (max-width: 768px) {
+    #edit-item {
+      width: 100%;
+    }
+  
+    #EIh1{
+      width: 60%;
+  
+    }
+      .EIform {
+          width: 60%; 
+      }
+  
+      .EIbutton {
+          width: 60%; 
+      }
+  
   }
   
 /* ITEM DETAILS PAGE STYLE */
@@ -1033,18 +1047,24 @@ font-size: 9vh;
 
 /* CART PAGE STYLE */
 .cart-page {
-    width: 100vw;
-    height: 90vh;
-    padding: 5vh 5vh 5vh 5vh;
+    width: 100%;
+    height: 100%;
+    min-height: 110vh;
+    padding: 5vh 0vh 5vh 0vh;
     background: #af0034;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
+  .cartBt{
+    display: flex;
+    flex-direction: column;
+  }
   
   .cart-content {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
     width: 100%;
     justify-content: space-between;
@@ -1054,19 +1074,24 @@ font-size: 9vh;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    flex: 1;
     margin-right: 2vh;
+  }
+
+  .cartInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   
   .cart-item {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    width: 100%;
+    width: 90%;
     height: 20vh;
     margin: 1vh 0;
-    padding: 1.5vh;
+    padding: 3.5vh;
     background: #f7f5f0;
     border-radius: 5px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -1075,7 +1100,7 @@ font-size: 9vh;
   .item-details {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     max-width: 70%;
   }
   
@@ -1083,6 +1108,8 @@ font-size: 9vh;
     color: #af0034;
     font-size: 2.3vh;
     margin: 1vh 0;
+    display: flex;
+    justify-content: center;
   }
   
   .item-image3 {
@@ -1094,6 +1121,12 @@ font-size: 9vh;
   .item-cost {
     font-size: 2.2vh;
     margin: 0.5vh 0;
+    display: flex;
+    justify-content: center;
+  }
+  .item-quantity{
+    display: flex;
+    justify-content: center;
   }
   
   .item-buttons {

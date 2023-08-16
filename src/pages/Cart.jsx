@@ -94,14 +94,18 @@ const Cart = () => {
         return (
           <div class="cart-item" key={_id}>
             <img class="item-image3" src={image} alt="item" />
+            <div className="cartInfo">
             <Link to={`/item-details/${_id}`}>
               <h3 class="item-name">{name}</h3>
             </Link>
             <h3 class="item-cost">$ {cost} USD</h3>
             <p class="item-quantity">Quantity: {quantity}</p>
+            </div>
+            <div className="cartBt">
             <button class="item-button" onClick={() => decreaseItem(_id)}>-1 item</button>
             <button class="item-button" onClick={() => increaseItem(_id)}>+1 item</button>
             <button class="item-button" onClick={() => deleteFromCart(_id)}>Remove item</button>
+            </div>
           </div>
         );
       })}
@@ -112,6 +116,7 @@ const Cart = () => {
         <p>Shipping: $10</p>
         <p>Total: $ {cart.total}</p>
         <button class="checkout-button" onClick={proceedToPayment}>Proceed to checkout</button>
+      
       </div>
     </div>
   ) : (

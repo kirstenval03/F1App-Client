@@ -668,8 +668,8 @@ font-size: 9vh;
   
 /* CURRENT SEASON PAGE STYLE */
 #CurrentSeasonPage {
-  width: 100vw;
-  padding: 3vh 5vh 5vh 5vh;
+  width: 100%;
+  padding: 3vh 0vh 5vh 0vh;
   background: #252424;
   display: flex;
   flex-direction: column;

@@ -605,7 +605,8 @@ font-size: 9vh;
 /* DRIVER DETAILS PAGE STYLE */
 .DriverDetailsPage {
     width: 100%;
-    padding: 3vh 5vh 5vh 5vh;
+    min-height: 110vh;
+    padding: 3vh 0vh 5vh 0vh;
     background: #000000;
     display: flex;
     flex-direction: column;
@@ -616,13 +617,12 @@ font-size: 9vh;
   #DDcontainer {
     background-color: #af0034;
     border-radius: 25px;
-    width: 90vw;
-    max-width: 1000px;
+    width: 100vh;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 2vh;
     margin-top: 20px;
   }
   
@@ -630,11 +630,11 @@ font-size: 9vh;
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 100%;
+    width: 95vh;
   }
   
   #DDImg {
-    width: 45%;
+    width: 30vh;
     max-width: 500px;
     height: auto;
     border-radius: 10px;
@@ -647,7 +647,7 @@ font-size: 9vh;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 400;
     font-size: 2vh;
-    width: 55%;
+    width: 70vh;
     padding-left: 20px;
   }
   
@@ -661,9 +661,12 @@ font-size: 9vh;
   .BackLink {
     color: #ffffff;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 2vh;
     margin-bottom: 20px;
     display: inline-block;
+  }
+  #DDh1{
+    width: 80vh;
   }
   
 /* CURRENT SEASON PAGE STYLE */

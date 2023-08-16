@@ -55,7 +55,7 @@ function DriverDetailsPage() {
     <div className="DriverDetailsPage">
 
       <img
-        id="DDh1Image"
+        id="DDh1"
         src="https://res.cloudinary.com/dhqplbne3/image/upload/v1691721007/Formula1-App/Driver_4_vdcatu.png"
         alt="Driver Banner"
       />
